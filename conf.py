@@ -143,6 +143,7 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/archive.html", "Archive"),
+        ("/pages/about/", "About"),
         ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed"),
     ),
@@ -156,7 +157,7 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootblog4"
+THEME = "bootstrap4"
 
 # A theme color. In default themes, it might be displayed by some browsers as
 # the browser UI color (eg. Chrome on Android). Other themes might also use it
@@ -174,14 +175,14 @@ THEME_COLOR = '#5670d4'
 THEME_CONFIG = {
     DEFAULT_LANG: {
         # Show the latest featured post in a large box, with the previewimage as its background.
-        'featured_large': False,
+        'featured_large': True,
         # Show the first (remaining) two featured posts in small boxes.
-        'featured_small': False,
+        'featured_small': True,
         # Show featured posts on mobile.
         'featured_on_mobile': True,
         # Show image in `featured_large` on mobile.
         # `featured_small` displays them only on desktop.
-        'featured_large_image_on_mobile': True,
+        'featured_large_image_on_mobile': False,
         # Strip HTML from featured post text.
         'featured_strip_html': False,
         # Contents of the sidebar, If empty, the sidebar is not displayed.
@@ -189,17 +190,17 @@ THEME_CONFIG = {
     }
 }
 # Config for bootstrap4:
-# THEME_CONFIG = {
-#     DEFAULT_LANG: {
-#         # Use a light navbar with dark text. Defaults to False.
-#         'navbar_light': False,
-#         # Use a custom navbar color. If unset, 'navbar_light' sets text +
-#         # background color. If set, navbar_light controls only background
-#         # color. Supported values: bg-dark, bg-light, bg-primary, bg-secondary,
-#         # bg-success, bg-danger, bg-warning, bg-info, bg-white, bg-transparent.
-#         'navbar_custom_bg': '',
-#     }
-# }
+THEME_CONFIG = {
+    DEFAULT_LANG: {
+        # Use a light navbar with dark text. Defaults to False.
+        'navbar_light': False,
+        # Use a custom navbar color. If unset, 'navbar_light' sets text +
+        # background color. If set, navbar_light controls only background
+        # color. Supported values: bg-dark, bg-light, bg-primary, bg-secondary,
+        # bg-success, bg-danger, bg-warning, bg-info, bg-white, bg-transparent.
+        'navbar_custom_bg': 'bg-dark'
+    }
+}
 
 # POSTS and PAGES contains (wildcard, destination, template) tuples.
 # (translatable)
@@ -268,7 +269,7 @@ TIMEZONE = "Asia/Calcutta"
 # Date format used to display post dates. (translatable)
 # Used by babel.dates, CLDR style: http://cldr.unicode.org/translation/date-time-1/date-time
 # You can also use 'full', 'long', 'medium', or 'short'
-# DATE_FORMAT = 'yyyy-MM-dd HH:mm'
+DATE_FORMAT = 'MM-yyyy'
 
 # Date format used to display post dates, if local dates are used. (translatable)
 # Used by Luxon: https://moment.github.io/luxon/docs/manual/formatting
@@ -527,13 +528,12 @@ HIDDEN_CATEGORIES = []
 # CATEGORY_DESTPATH_FIRST_DIRECTORY_ONLY = True
 
 # Map paths to prettier category names. (translatable)
-# CATEGORY_DESTPATH_NAMES = {
-#    DEFAULT_LANG: {
-#        'webdev': 'Web Development',
-#        'webdev/django': 'Web Development/Django',
-#        'random': 'Odds and Ends',
-#    },
-# }
+CATEGORY_DESTPATH_NAMES = {
+   DEFAULT_LANG: {
+       'webdev': 'Web Development',
+       'howto': 'How to do tutorials'
+   },
+}
 
 # By default, category indexes will appear in CATEGORY_PATH and use
 # CATEGORY_PREFIX. If this is enabled, those settings will be ignored (except
@@ -983,7 +983,7 @@ LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license}'
+CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a>'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -1171,7 +1171,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # """
 
 # Show link to source for the posts?
-# SHOW_SOURCELINK = True
+SHOW_SOURCELINK = False
 # Copy the source files for your pages?
 # Setting it to False implies SHOW_SOURCELINK = False
 # COPY_SOURCES = True
@@ -1407,7 +1407,9 @@ WARN_ABOUT_TAG_METADATA = False
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {}
+GLOBAL_CONTEXT = {
+    # 'HACK_VARIANT': 'light'
+}
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be
