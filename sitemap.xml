@@ -7,27 +7,55 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://example.com/</loc>
-  <lastmod>2024-01-28T13:43:00Z</lastmod>
+  <lastmod>2024-01-28T18:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/2019/</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </url>
  <url>
+  <loc>https://example.com/2024/</loc>
+  <lastmod>2024-01-28T18:50:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://example.com/archive.html</loc>
-  <lastmod>2024-01-28T13:43:00Z</lastmod>
+  <lastmod>2024-02-04T17:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/</loc>
-  <lastmod>2024-01-28T13:43:00Z</lastmod>
+  <lastmod>2024-01-28T18:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/categories/artificial-intelligence/</loc>
+  <lastmod>2024-01-28T18:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/cat_programming/</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </url>
  <url>
+  <loc>https://example.com/categories/cat_technology/</loc>
+  <lastmod>2024-01-28T18:51:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://example.com/categories/golang/</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/categories/llm/</loc>
+  <lastmod>2024-01-28T18:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/categories/natural-language-processing/</loc>
+  <lastmod>2024-01-28T18:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/categories/nlp/</loc>
+  <lastmod>2024-01-28T18:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/categories/prompt-engineering/</loc>
+  <lastmod>2024-01-28T18:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/webdev/</loc>
@@ -36,6 +64,14 @@
  <url>
   <loc>https://example.com/pages/about/</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/pages/goals/</loc>
+  <lastmod>2024-02-04T17:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/posts/prompt-engineering/</loc>
+  <lastmod>2024-01-28T18:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/posts/what-go-programming-language-does-and-does-not-have/</loc>

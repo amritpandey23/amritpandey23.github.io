@@ -6,12 +6,36 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://example.com/categories/artificial-intelligence.xml</loc>
+  <lastmod>2024-01-28T18:51:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://example.com/categories/cat_programming.xml</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://example.com/categories/cat_technology.xml</loc>
+  <lastmod>2024-01-28T19:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://example.com/categories/golang.xml</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://example.com/categories/llm.xml</loc>
+  <lastmod>2024-01-28T19:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://example.com/categories/natural-language-processing.xml</loc>
+  <lastmod>2024-01-28T18:51:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://example.com/categories/nlp.xml</loc>
+  <lastmod>2024-01-28T19:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://example.com/categories/prompt-engineering.xml</loc>
+  <lastmod>2024-01-28T18:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/categories/webdev.xml</loc>
@@ -19,10 +43,10 @@
  </sitemap>
  <sitemap>
   <loc>https://example.com/rss.xml</loc>
-  <lastmod>2024-01-28T13:43:00Z</lastmod>
+  <lastmod>2024-01-28T19:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/sitemap.xml</loc>
-  <lastmod>2024-01-28T13:43:00Z</lastmod>
+  <lastmod>2024-02-04T17:27:00Z</lastmod>
  </sitemap>
 </sitemapindex>
