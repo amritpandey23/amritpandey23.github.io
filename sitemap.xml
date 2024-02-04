@@ -19,15 +19,11 @@
  </url>
  <url>
   <loc>https://example.com/archive.html</loc>
-  <lastmod>2024-02-04T17:27:00Z</lastmod>
+  <lastmod>2024-02-04T17:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/</loc>
-  <lastmod>2024-01-28T18:52:00Z</lastmod>
- </url>
- <url>
-  <loc>https://example.com/categories/artificial-intelligence/</loc>
-  <lastmod>2024-01-28T18:51:00Z</lastmod>
+  <lastmod>2024-02-04T17:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/cat_programming/</loc>
@@ -46,16 +42,8 @@
   <lastmod>2024-01-28T18:52:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/natural-language-processing/</loc>
-  <lastmod>2024-01-28T18:51:00Z</lastmod>
- </url>
- <url>
   <loc>https://example.com/categories/nlp/</loc>
   <lastmod>2024-01-28T18:52:00Z</lastmod>
- </url>
- <url>
-  <loc>https://example.com/categories/prompt-engineering/</loc>
-  <lastmod>2024-01-28T18:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/webdev/</loc>
