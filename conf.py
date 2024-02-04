@@ -145,6 +145,7 @@ NAVIGATION_LINKS = {
         ("/archive.html", "Archive"),
         ("/pages/about/", "About"),
         ("/categories/", "Tags"),
+        ("/pages/goals/", "Goals 2024"),
         ("/rss.xml", "RSS feed"),
     ),
 }
