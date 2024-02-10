@@ -15,35 +15,27 @@
  </url>
  <url>
   <loc>https://example.com/2024/</loc>
-  <lastmod>2024-01-28T18:50:00Z</lastmod>
+  <lastmod>2024-02-04T17:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/archive.html</loc>
-  <lastmod>2024-02-04T17:30:00Z</lastmod>
+  <lastmod>2024-02-10T16:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/</loc>
-  <lastmod>2024-02-04T17:28:00Z</lastmod>
+  <lastmod>2024-02-04T17:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/cat_programming/</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/cat_technology/</loc>
-  <lastmod>2024-01-28T18:51:00Z</lastmod>
- </url>
- <url>
   <loc>https://example.com/categories/golang/</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/llm/</loc>
-  <lastmod>2024-01-28T18:52:00Z</lastmod>
- </url>
- <url>
-  <loc>https://example.com/categories/nlp/</loc>
-  <lastmod>2024-01-28T18:52:00Z</lastmod>
+  <loc>https://example.com/categories/software-development/</loc>
+  <lastmod>2024-02-04T17:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/webdev/</loc>
@@ -58,8 +50,8 @@
   <lastmod>2024-02-04T17:26:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/prompt-engineering/</loc>
-  <lastmod>2024-01-28T18:50:00Z</lastmod>
+  <loc>https://example.com/posts/model-view-presenter-mvp-architecture/</loc>
+  <lastmod>2024-02-04T17:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/posts/what-go-programming-language-does-and-does-not-have/</loc>

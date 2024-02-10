@@ -10,20 +10,12 @@
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://example.com/categories/cat_technology.xml</loc>
-  <lastmod>2024-01-28T19:06:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://example.com/categories/golang.xml</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://example.com/categories/llm.xml</loc>
-  <lastmod>2024-01-28T19:06:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://example.com/categories/nlp.xml</loc>
-  <lastmod>2024-01-28T19:06:00Z</lastmod>
+  <loc>https://example.com/categories/software-development.xml</loc>
+  <lastmod>2024-02-10T16:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/categories/webdev.xml</loc>
@@ -31,10 +23,10 @@
  </sitemap>
  <sitemap>
   <loc>https://example.com/rss.xml</loc>
-  <lastmod>2024-02-04T17:30:00Z</lastmod>
+  <lastmod>2024-02-10T16:58:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/sitemap.xml</loc>
-  <lastmod>2024-02-04T17:30:00Z</lastmod>
+  <lastmod>2024-02-10T16:59:00Z</lastmod>
  </sitemap>
 </sitemapindex>
