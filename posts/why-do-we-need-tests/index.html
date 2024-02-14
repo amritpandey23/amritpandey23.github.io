@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Running a program without tests is like using a mathematical formula without proof. We “hope” program will work as expected for every input.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why do we need tests! | Amrit's Blog</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://example.com/posts/why-do-we-need-tests/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Amrit">
+<link rel="prev" href="../what-go-programming-language-does-and-does-not-have/" title="What Go Programming Language does and does not have" type="text/html">
+<link rel="next" href="../some-invaluable-tips-for-programmers/" title="Some invaluable tips for programmers" type="text/html">
+<meta property="og:site_name" content="Amrit's Blog">
+<meta property="og:title" content="Why do we need tests!">
+<meta property="og:url" content="https://example.com/posts/why-do-we-need-tests/">
+<meta property="og:description" content="Running a program without tests is like using a mathematical formula without proof. We “hope” program will work as expected for every input.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-06-14T00:00:00+05:30">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="software development">
+<meta property="article:tag" content="webdev">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Amrit's Blog</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archive</a>
+                </li>
+<li class="nav-item">
+<a href="../../pages/about/" class="nav-link">About</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Why do we need tests!</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Amrit
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2019-06-14T00:00:00+05:30" itemprop="datePublished" title="06-2019">06-2019</time></a>
+            </p>
+            
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <blockquote>
+<p>Running a program without tests is like using a mathematical formula without proof. We “hope” program will work as expected for every input.</p>
+</blockquote>
+<p>The process of converting pseudo code to a working program usually takes one special step at the end called testing. When we write a function we imagine parameters and expected return type. We check whether the function works by running it, if the results produced are as expected, we move on to next function. If something goes wrong we study the results, fix the problem and re-run the function until it yields a correct result.</p>
+<p>But this process of manual re-run to check for errors often lead us to miss some cases. For example, function <code>foo(a)</code> gives the expected result but <code>foo(b)</code> does not. We will then fix the code to make <code>foo(b)</code> work but forget to re-run and check <code>foo(a)</code>.</p>
+<p>When we run functions we want expected results every time, and thus functions are designed that way, but it is impossible even for programmers to assure the correct output from a function on every execution. To tackle this issue, we use <a href="https://en.wikipedia.org/wiki/Test_automation">automated testing</a>.</p>
+<p>An automated testing is a procedure where the tests are written separately in addition to the code. These tests are executed to check the expected output of the programs. The outputs of various specs and their test cases are validated with assertions. This way, whenever programmers change the code, they can run automated testing programs to validate results.</p>
+<p>In this article we will see how to setup testing in nodejs. I will be using <code>Mocha</code> which is a testing framework for both front-end and back-end javascript. And we will discuss basics of testing by writing some specs and test cases for <a href="https://lodash.com/">lodash</a> library.</p>
+<h3>Setup</h3>
+<p>I have prepared a <a href="https://github.com/ap4gh/testing_with_mocha">github repo</a> containing all the code and test files which are used in this tutorial. You should begin by cloning and installing the dependencies.</p>
+<div class="code"><pre class="code literal-block">git clone https://github.com/ap4gh/testing_with_mocha.git
+mv testing_with_mocha
+npm install
+</pre></div>
+
+<p>Run the tests in terminal with following command.</p>
+<div class="code"><pre class="code literal-block">npm run test
+</pre></div>
+
+<p><img alt="Screenshot 2019-06-12 at 5.43.37 PM.png" src="https://cdn.hashnode.com/res/hashnode/image/upload/v1560341742640/osFyMlS6m.png"></p>
+<p>The final version of testing code is in the <code>master</code> branch, however there is a <code>start</code> branch which contains boilerplate setup for you to practice. <code>npm run test</code> script hot reload mocha as you create new tests.</p>
+<h3>Specification</h3>
+<p>A specification or spec is an entity that describe what a functionality is expected to do in various cases. Example, Let us say we want to test <code>Math.max()</code> function,  we can write a spec in the following manner.</p>
+<div class="code"><pre class="code literal-block"><span class="nx">describe</span><span class="p">(</span><span class="s1">'Math.max'</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s1">'finds maximum of two numbers'</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">assert</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">done</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>This snippet is entirely one spec and contain three blocks.</p>
+<p><strong><code>describe</code></strong> As the name suggests, it describe what functionality we are testing. It takes a <code>String</code> description like 'Math.max' and an anonymous function as parameters.</p>
+<p><strong><code>it</code></strong> This block execute the testing code and assert the output. It also takes a <code>String</code> description of the test case and a <code>done</code> callback as parameters. The description of <code>it</code> blocks explains what the test case it about.</p>
+<p><strong><code>assert</code></strong> The output of any functionality is validated by comparing it with an expected value. Assert block compares the output and returns a boolean value.</p>
+<p><strong><code>done</code></strong> is special callback that tells mocha to conclude a test case. We will discuss more about that later in this tutorial.</p>
+<h3>A Simple Test</h3>
+<p>All the test files are contained in a directory named <code>test</code> in root of the project directory. Testing frameworks look for this directory and execute every test file in it. In the cloned repo, open <code>test/test1.js</code> file which has following code.</p>
+<div class="code"><pre class="code literal-block"><span class="kd">const</span><span class="w"> </span><span class="nx">assert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'assert'</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'lodash'</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s1">'Loadash Array Test 1'</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">testArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+
+<span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s1">'finds head of the array'</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">head</span><span class="p">(</span><span class="nx">testArray</span><span class="p">),</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">done</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s1">'slice first 2 elements'</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">slicedArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">_</span><span class="p">.</span><span class="nx">take</span><span class="p">(</span><span class="nx">testArray</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">slicedArray</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">assert</span><span class="p">(</span><span class="nx">slicedArray</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">slicedArray</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="mf">2</span><span class="p">));</span>
+<span class="w">        </span><span class="nx">done</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+
+<p>This is a very simple test spec, it has one describe block and two test cases. The describe block explains what the spec is about. Describe block also have a variable <code>testArray</code> on which tests are performed.</p>
+<p>The first case is about testing <code>_.head</code> method. As intended, this method should return first element in an array. This return value is then compared with the expected value of <code>1</code> in <code>testArray</code> variable. </p>
+<p>An assertion is done with <code>assert.equal</code> method. We could also have passed an expression instead of using <code>.equal</code> in assertion block.</p>
+<div class="code"><pre class="code literal-block"><span class="nx">assert</span><span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">head</span><span class="p">(</span><span class="nx">testArray</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+</pre></div>
+
+<p>This is the basis of writing tests. We create a <code>describe</code> block to check a functionality and create multiple test cases with <code>it</code> blocks. We can also implement multiple assertions inside <code>it</code> blocks if required.</p>
+<h3>Hooks</h3>
+<p>Hooks are user defined block of code that run outside the scope of tests. So if we want to execute a block of code that support tests but has nothing to do with the test cases directly we use hooks.</p>
+<p>For example, <code>it</code> blocks after performing tests can change the original value of test variable <code>testArray</code>. This will lead to poor testing and incorrect assertions by other cases.</p>
+<p>We can use a <code>beforeEach</code> hook that will reset the value of <code>testArray</code> variable before cases are executed. The hooks must be defined in the scope where they are needed. In our case we have defined a hook inside of <code>describe</code> block that will run before each <code>it</code> block.</p>
+<div class="code"><pre class="code literal-block"><span class="nx">describe</span><span class="p">(</span><span class="s1">'Lodash String Test 1'</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">testStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">''</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nx">beforeEach</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">testStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'hello    '</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s1">'finds last character'</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">assert</span><span class="p">(</span><span class="o">!</span><span class="nx">_</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="nx">testStr</span><span class="p">,</span><span class="w"> </span><span class="s1">'d'</span><span class="p">));</span>
+<span class="w">        </span><span class="nx">done</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s1">'finds last character to a position'</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">assert</span><span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="nx">testStr</span><span class="p">,</span><span class="w"> </span><span class="s1">'l'</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span>
+<span class="w">        </span><span class="nx">done</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s1">'trims the extra space in the end'</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="nx">testStr</span><span class="p">),</span><span class="w"> </span><span class="s1">'hello'</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">done</span><span class="p">();</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>Hooks take an anonymous function as a parameter. In the above code a simple <code>beforeEach</code> is defined inside <code>describe</code> that will reset the value of <code>testStr</code> to <code>hello</code> before <code>it</code> blocks are executed.</p>
+<p>Mocha offers three more hooks, <code>afterEach</code>, <code>after</code> and <code>before</code>. After and before hooks runs only one time in the defined scope. If you want to define a hook that will run before or after entire test procedure, you can put them inside a <code>helper</code> file. In the cloned repo you will find a <code>helper.js</code> file containing <code>after</code> and <code>before</code>  hooks.</p>
+<h3>Nested Describe</h3>
+<p>If a functionality have sub-functionality that could utilize their own spec, you can nest them in parent spec.</p>
+<div class="code"><pre class="code literal-block"><span class="nx">describe</span><span class="p">(</span><span class="s1">'Objects Test Specs'</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">testObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+
+<span class="w">    </span><span class="nx">beforeEach</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">testObj</span><span class="p">[</span><span class="s1">'a'</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">'a'</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">'A'</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="nx">testObj</span><span class="p">[</span><span class="s1">'b'</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">'b'</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">'B'</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+
+<span class="w">    </span><span class="nx">describe</span><span class="p">(</span><span class="s1">'Lodash Object Test 1'</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">it</span><span class="p">(</span><span class="s1">'finds associated key for a value'</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">_</span><span class="p">.</span><span class="nx">findKey</span><span class="p">(</span><span class="nx">testObj</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">'a'</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">'A'</span><span class="w"> </span><span class="p">});</span>
+<span class="w">            </span><span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="s1">'a'</span><span class="p">);</span>
+<span class="w">            </span><span class="nx">done</span><span class="p">();</span>
+<span class="w">        </span><span class="p">});</span>
+
+<span class="w">        </span><span class="nx">it</span><span class="p">(</span><span class="s1">'checks if key exist'</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">assert</span><span class="p">(</span><span class="o">!</span><span class="nx">_</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">testObj</span><span class="p">,</span><span class="w"> </span><span class="s1">'c'</span><span class="p">));</span>
+<span class="w">            </span><span class="nx">done</span><span class="p">();</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>In the above code, spec <em>Lodash Object Test 1</em> is nested inside of <em>Objects Test Specs</em>. The <code>beforeEach</code> hook applies to each <strong>spec</strong> before execution.</p>
+<h3>Working with Promises</h3>
+<p>Mocha execute tests asynchronously, meaning it will not wait for a case to finish before executing the next. While working with promises the program might need to wait for sometime.</p>
+<p>To work with promises, you can utilize <code>done</code> callback. Lets see it with an example.</p>
+<div class="code"><pre class="code literal-block"><span class="kd">const</span><span class="w"> </span><span class="nx">assert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'assert'</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">wait</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'../src/wait'</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s1">'wait Promise'</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">it</span><span class="p">(</span><span class="s1">'returns \'completed\' after 1 sec'</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">wait</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">assert</span><span class="p">(</span><span class="nx">value</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'completed'</span><span class="p">);</span>
+<span class="w">            </span><span class="nx">done</span><span class="p">();</span><span class="w"> </span><span class="c1">// testing finish here</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+<p><img alt="Screenshot 2019-06-12 at 5.43.37 PM.png" src="https://cdn.hashnode.com/res/hashnode/image/upload/v1560342577480/1JeydfXHC.png"></p>
+<p>In above code <code>wait</code> promise takes 1 second to return a value. Done is called inside of <code>.then</code> block to tell mocha to conclude the test. <code>done</code> is an important callback that must be passed after each test case is asserted.</p>
+<h3>Conclusion</h3>
+<p>Something that I did not explained fully is <code>assert</code> module, it is available directly via <code>node</code>. You can read more about it <a href="https://nodejs.org/dist/latest-v10.x/docs/api/assert.html">here</a>. If you followed this article you have attained the minimum requirement of knowing how to setup and run test in javascript. Setting up tests in a javascript/node project is easy but your tests are only as good as your assertion logic. If you have any suggestion/query please comment down below or DM me on <a href="https://twitter.com/DiaryOfDev">twitter</a>.</p>
+<p>Further reading:
+- <a href="https://mochajs.org/">Mocha</a>
+- <a href="https://javascript.info/testing-mocha">Testing on front-end</a> </p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/javascript/" rel="tag">javascript</a></li>
+            <li><a class="tag p-category" href="../../categories/software-development/" rel="tag">software development</a></li>
+            <li><a class="tag p-category" href="../../categories/webdev/" rel="tag">webdev</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../what-go-programming-language-does-and-does-not-have/" rel="prev" title="What Go Programming Language does and does not have">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../some-invaluable-tips-for-programmers/" rel="next" title="Some invaluable tips for programmers">Next post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer">
+            Contents © 2024         <a href="mailto:mail.amritpandey@sap.com">Amrit</a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>

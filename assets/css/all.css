@@ -926,3 +926,42 @@ html[dir="rtl"] body {
     min-height: 25px;
 }
 
+.navbar-brand {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.body-content {
+    max-width: 840px !important;
+    margin: 0 auto;
+}
+
+p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Cormorant', 'Times New Roman', Times, serif;
+}
+
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+
+blockquote {
+    border-left: 10px solid #007bff;
+    padding-left: 20px;
+    font-style: italic;
+}
+
+blockquote p {
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
