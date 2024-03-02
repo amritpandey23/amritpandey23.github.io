@@ -23,13 +23,87 @@ Start by comprehensively understanding and committing to memory all essential al
 
 Acquiring a deep understanding of each topic is paramount. Without ingraining these algorithms into memory, solving problems becomes significantly more challenging. It's akin to knowing what needs to be done but struggling to articulate it. Therefore, prioritize memorizing algorithms for each topic. Here's a breakdown of algorithms for each category:
 
-- **Math:** LCM, GCD, Prime number detection, Sieve of Eratosthenes, principle of mutual exclusion, square root calculation, binary and ternary exponentiation, bit arithmetic, permutation, combination, factorial, time complexity.
-- **Array:** Linear search, binary search, sorting algorithms, heap, two pointers, three pointers.
-- **String:** String manipulation methods (e.g., indexOf, replace, substring), string-based algorithms (e.g., Rabin-Karp, hashing).
-- **Hashing:** Hashset, Hashmap implementation in the chosen programming language.
-- **Graph:** BFS, DFS, Shortest path, longest path, Dijkstra's algorithm, Tarjan's algorithm, Kosaraju's algorithm.
-- **LinkedList, Binary Tree (BT), Binary Search Tree (BST), AVL Tree, Red-Black Tree (RB)**
-- **Dynamic Programming:** Classical dynamic programming problems.
+**Math:**
+- LCM
+- GCD
+- Is Prime
+- Sieve of Eratosthenes
+- Binary Exponentiation
+- Modular Exponentiation
+- Karatsuba
+- Fermat's little theorem
+- Bit arithematic
+- Permutation
+- Combination
+
+**Array:**
+- Linear Search
+- Binary Search
+- Bubble Sort
+- Selection Sort
+- Insertion Sort
+- Merge Sort
+- Quick Sort
+- Counting Sort
+- Radix Sort
+- Heap Sort
+- Shell Sort
+- Bucket Sort
+- Cycle Sort
+- Two Pointer
+- Three Pointer
+
+**String:**
+- All String manipulation methods in programming language of choice.
+- Rabin-Karp
+- KMP
+- Boyre Moore
+- Trie
+- Levenshtein Distance
+- Longest Common Subsequence
+
+**Hashing:**
+- Hashset
+- Hashmaps
+- Using arrays as maps
+
+**Stacks & Queues:**
+- Know-How
+
+**Graph:**
+- BFS
+- DFS
+- Dijkstra's Algorithm
+- Bellman-Ford Algorithm
+- Floyd-Warshall Algorithm
+- Prim's Algorithm
+- Kruskal's Algorithm
+- Topological Sorting
+- Tarjan's Algorithm
+- Kosaraju's Algorithm
+- Bipartite Checking
+- Articulation Points
+- Eulerian Path and Circuit
+- Hamiltonian Path and Circuit
+- Minimum Cut
+
+**Linked List, Binary Tree, Binary Search Tree, AVL Tree, RB Tree:**
+- Know-How
+
+**Dynamic Programming(Classical problems):**
+- Fibonacci Series
+- Longest Common Subsequence
+- Longest Incresing Subsequence
+- Knapsack Problem
+- Matrix Chain Multiplication
+- Edit Distance
+- Coin Change Problem
+- Subset Sum Problem
+- Partition Equal Subset Sum
+- 0/1 Knapsack Problem
+- Maximum Subarray Sum
+- Rod Cutting Problem
+- Coin Row Problem
 
 The list is not complete but you can get exhaustive list of algorithms anywhere on the internet. 
 
