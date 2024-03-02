@@ -2,10 +2,10 @@
 .. title: Simple path to get good in DSA
 .. slug: simple-path-to-get-good-in-dsa
 .. date: 2024-03-02 16:54:23 UTC+05:30
-.. tags: 
+.. tags: programming, career
 .. category: 
 .. link: 
-.. description: 
+.. description: Simple path to get good at solving Data Structure and Algorithm problems. 
 .. type: text
 -->
 
