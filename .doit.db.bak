@@ -151,3 +151,7 @@
 'render_sources:output\\posts\\simple-path-to-get-good-in-dsa\\index.md', (822784, 287)
 'render_pages:output\\posts\\simple-path-to-get-good-in-dsa\\index.html', (823296, 4062)
 'render_posts:cache\\posts\\simple-path-to-get-good-in-dsa.html', (827392, 421)
+'render_taxonomies:output\\categories\\programming.xml', (836608, 600)
+'render_taxonomies:output\\categories\\career\\index.html', (837632, 2523)
+'render_taxonomies:output\\categories\\career.xml', (849920, 600)
+'render_taxonomies:output\\categories\\programming\\index.html', (850944, 2523)
