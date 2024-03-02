@@ -11,7 +11,7 @@
 
 Preparing to tackle Data Structures and Algorithms (DSA) effectively involves a dual approach, which I categorize as "Mathematics" and "Intuition". Much like mathematics, where one begins with learning theorems and formulas before solving problems, mastering DSA requires a solid foundation in popular data structures and algorithms followed by honing problem-solving intuition.
 
-**Part 1: Mathematics**
+### Part 1: Mathematics
 
 Start by comprehensively understanding and committing to memory all essential algorithms in DSA. Progress through the following levels:
 
@@ -107,7 +107,7 @@ Acquiring a deep understanding of each topic is paramount. Without ingraining th
 
 The list is not complete but you can get exhaustive list of algorithms anywhere on the internet. 
 
-**Part 2: Intuition**
+### Part 2: Intuition
 
 Upon completing each level, immerse yourself in problem-solving. These problems demand more than just applying memorized algorithms; they require a deep understanding of the problem and the ability to adapt standard algorithms to solve specific scenarios. Consider the memorized algorithms as templates that guide your problem-solving approach.
 
