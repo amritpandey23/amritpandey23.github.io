@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Amrit's Blog</title><link>https://example.com/</link><description>Blog site of Amrit, SE at SAP</description><atom:link href="https://example.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:mail.amritpandey@sap.com"&gt;Amrit&lt;/a&gt; </copyright><lastBuildDate>Sat, 02 Mar 2024 17:23:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple path to get good in DSA</title><link>https://example.com/posts/simple-path-to-get-good-in-dsa/</link><dc:creator>Amrit</dc:creator><description>&lt;p&gt;Preparing to tackle Data Structures and Algorithms (DSA) effectively involves a dual approach, which I categorize as "Mathematics" and "Intuition". Much like mathematics, where one begins with learning theorems and formulas before solving problems, mastering DSA requires a solid foundation in popular data structures and algorithms followed by honing problem-solving intuition.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Amrit's Blog</title><link>https://example.com/</link><description>Blog site of Amrit, SE at SAP</description><atom:link href="https://example.com/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2024 &lt;a href="mailto:mail.amritpandey@sap.com"&gt;Amrit&lt;/a&gt; </copyright><lastBuildDate>Sat, 02 Mar 2024 17:32:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple path to get good in DSA</title><link>https://example.com/posts/simple-path-to-get-good-in-dsa/</link><dc:creator>Amrit</dc:creator><description>&lt;p&gt;Preparing to tackle Data Structures and Algorithms (DSA) effectively involves a dual approach, which I categorize as "Mathematics" and "Intuition". Much like mathematics, where one begins with learning theorems and formulas before solving problems, mastering DSA requires a solid foundation in popular data structures and algorithms followed by honing problem-solving intuition.&lt;/p&gt;
 &lt;h4&gt;Part 1: Mathematics&lt;/h4&gt;
 &lt;p&gt;Start by comprehensively understanding and committing to memory all essential algorithms in DSA. Progress through the following levels:&lt;/p&gt;
 &lt;ol&gt;
@@ -9,81 +9,86 @@
 &lt;li&gt;&lt;strong&gt;Linked List + Binary Tree + BST + AVL + RB&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Dynamic Programming&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Acquiring a deep understanding of each topic is paramount. Without ingraining these algorithms into memory, solving problems becomes significantly more challenging. It's akin to knowing what needs to be done but struggling to articulate it. Therefore, prioritize memorizing algorithms for each topic. Here's a breakdown of algorithms for each category:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Math:&lt;/strong&gt;
-- LCM
-- GCD
-- Is Prime
-- Sieve of Eratosthenes
-- Binary Exponentiation
-- Modular Exponentiation
-- Karatsuba
-- Fermat's little theorem
-- Bit arithematic
-- Permutation
-- Combination&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Array:&lt;/strong&gt;
-- Linear Search
-- Binary Search
-- Bubble Sort
-- Selection Sort
-- Insertion Sort
-- Merge Sort
-- Quick Sort
-- Counting Sort
-- Radix Sort
-- Heap Sort
-- Shell Sort
-- Bucket Sort
-- Cycle Sort
-- Two Pointer
-- Three Pointer&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;String:&lt;/strong&gt;
-- All String manipulation methods in programming language of choice.
-- Rabin-Karp
-- KMP
-- Boyre Moore
-- Trie
-- Levenshtein Distance
-- Longest Common Subsequence&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Hashing:&lt;/strong&gt;
-- Hashset
-- Hashmaps
-- Using arrays as maps&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Stacks &amp;amp; Queues:&lt;/strong&gt;
-- Know-How&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Graph:&lt;/strong&gt;
-- BFS
-- DFS
-- Dijkstra's Algorithm
-- Bellman-Ford Algorithm
-- Floyd-Warshall Algorithm
-- Prim's Algorithm
-- Kruskal's Algorithm
-- Topological Sorting
-- Tarjan's Algorithm
-- Kosaraju's Algorithm
-- Bipartite Checking
-- Articulation Points
-- Eulerian Path and Circuit
-- Hamiltonian Path and Circuit
-- Minimum Cut&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Linked List, Binary Tree, Binary Search Tree, AVL Tree, RB Tree:&lt;/strong&gt;
-- Know-How&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Dynamic Programming(Classical problems):&lt;/strong&gt;
-- Fibonacci Series
-- Longest Common Subsequence
-- Longest Incresing Subsequence
-- Knapsack Problem
-- Matrix Chain Multiplication
-- Edit Distance
-- Coin Change Problem
-- Subset Sum Problem
-- Partition Equal Subset Sum
-- 0/1 Knapsack Problem
-- Maximum Subarray Sum
-- Rod Cutting Problem
-- Coin Row Problem&lt;/p&gt;
+&lt;p&gt;Acquiring a deep understanding of each topic is paramount. Without ingraining these algorithms into memory, solving problems becomes significantly more challenging. It's akin to knowing what needs to be done but struggling to articulate it. Therefore, prioritize memorizing algorithms for each topic. Here's a breakdown of algorithms for each category:
+| Category                                | Algorithms                               |
+|-----------------------------------------|------------------------------------------|
+| &lt;strong&gt;Math:&lt;/strong&gt;                               |                                          |
+|                                         | LCM                                      |
+|                                         | GCD                                      |
+|                                         | Is Prime                                 |
+|                                         | Sieve of Eratosthenes                    |
+|                                         | Binary Exponentiation                    |
+|                                         | Modular Exponentiation                   |
+|                                         | Karatsuba                                |
+|                                         | Fermat's little theorem                  |
+|                                         | Strassens                                |
+|                                         | Bit arithematic                          |
+|                                         | Permutation                              |
+|                                         | Combination                              |
+| &lt;strong&gt;Array:&lt;/strong&gt;                              |                                          |
+|                                         | Linear Search                            |
+|                                         | Binary Search                            |
+|                                         | Bubble Sort                              |
+|                                         | Selection Sort                           |
+|                                         | Insertion Sort                           |
+|                                         | Merge Sort                               |
+|                                         | Quick Sort                               |
+|                                         | Counting Sort                            |
+|                                         | Radix Sort                               |
+|                                         | Heap Sort                                |
+|                                         | Shell Sort                               |
+|                                         | Bucket Sort                              |
+|                                         | Cycle Sort                               |
+|                                         | Two Pointer                              |
+|                                         | Three Pointer                            |
+| &lt;strong&gt;String:&lt;/strong&gt;                             |                                          |
+|                                         | All String manipulation methods          |
+|                                         | Rabin-Karp                               |
+|                                         | KMP                                      |
+|                                         | Boyre Moore                              |
+|                                         | Trie                                     |
+|                                         | Levenshtein Distance                     |
+|                                         | Longest Common Subsequence               |
+| &lt;strong&gt;Hashing:&lt;/strong&gt;                            |                                          |
+|                                         | Hashset                                  |
+|                                         | Hashmaps                                 |
+|                                         | Using arrays as maps                     |
+| &lt;strong&gt;Stacks &amp;amp; Queues:&lt;/strong&gt;                    |                                          |
+|                                         | Know-How                                 |
+| &lt;strong&gt;Graph:&lt;/strong&gt;                              |                                          |
+|                                         | BFS                                      |
+|                                         | DFS                                      |
+|                                         | Dijkstra's Algorithm                     |
+|                                         | Bellman-Ford Algorithm                   |
+|                                         | Floyd-Warshall Algorithm                 |
+|                                         | Prim's Algorithm                         |
+|                                         | Kruskal's Algorithm                      |
+|                                         | Topological Sorting                      |
+|                                         | Tarjan's Algorithm                       |
+|                                         | Kosaraju's Algorithm                     |
+|                                         | Bipartite Checking                       |
+|                                         | Articulation Points                      |
+|                                         | Eulerian Path and Circuit                |
+|                                         | Hamiltonian Path and Circuit             |
+|                                         | Minimum Cut                              |
+| &lt;strong&gt;Linked List, Binary Tree, Binary     |                                          |
+| Search Tree, AVL Tree, RB Tree:&lt;/strong&gt;      |                                          |
+|                                         | Know-How                                 |
+| &lt;strong&gt;Dynamic Programming(Classical        |                                          |
+| problems):&lt;/strong&gt;                            |                                          |
+|                                         | Fibonacci Series                         |
+|                                         | Longest Common Subsequence               |
+|                                         | Longest Incresing Subsequence            |
+|                                         | Knapsack Problem                         |
+|                                         | Matrix Chain Multiplication              |
+|                                         | Edit Distance                            |
+|                                         | Coin Change Problem                      |
+|                                         | Subset Sum Problem                       |
+|                                         | Partition Equal Subset Sum               |
+|                                         | 0/1 Knapsack Problem                    |
+|                                         | Maximum Subarray Sum                     |
+|                                         | Rod Cutting Problem                      |
+|                                         | Coin Row Problem                         |&lt;/p&gt;
 &lt;p&gt;The list is not complete but you can get exhaustive list of algorithms anywhere on the internet. &lt;/p&gt;
 &lt;h4&gt;Part 2: Intuition&lt;/h4&gt;
 &lt;p&gt;Upon completing each level, immerse yourself in problem-solving. These problems demand more than just applying memorized algorithms; they require a deep understanding of the problem and the ability to adapt standard algorithms to solve specific scenarios. Consider the memorized algorithms as templates that guide your problem-solving approach.&lt;/p&gt;
