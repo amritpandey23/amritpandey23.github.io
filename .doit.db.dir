@@ -117,7 +117,7 @@
 'render_taxonomies:output\\categories\\nlp.xml', (485888, 540)
 'render_posts:cache\\pages\\goals.html', (486912, 351)
 'render_sources:output\\pages\\goals\\index.src.html', (487424, 240)
-'render_pages:output\\pages\\goals\\index.html', (617984, 5110)
+'render_pages:output\\pages\\goals\\index.html', (617984, 5111)
 'render_posts:cache\\posts\\model-view-presenter-mvp-architecture.html', (504832, 442)
 'render_taxonomies:output\\categories\\software-development.xml', (705024, 1534)
 'render_taxonomies:output\\categories\\software-development\\index.html', (805376, 4140)
