@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Garbage Collectors solved crucial memory management issues by preventing leaks, but they add runtime overhead, reducing overall performance. With languages like Rust that omits GC for more efficient memory management, it's worth questioning whether new programming languages still need garbage collectors.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>To GC or not to GC | Amrit's Blog</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://example.com/posts/garbage-collector-then-a-boon-now-a-curse/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Amrit">
+<link rel="prev" href="../simple-path-to-get-good-in-dsa/" title="Simple path to get good in DSA" type="text/html">
+<meta property="og:site_name" content="Amrit's Blog">
+<meta property="og:title" content="To GC or not to GC">
+<meta property="og:url" content="https://example.com/posts/garbage-collector-then-a-boon-now-a-curse/">
+<meta property="og:description" content="Garbage Collectors solved crucial memory management issues by preventing leaks, but they add runtime overhead, reducing overall performance. With languages like Rust that omits GC for more efficient m">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2024-05-18T18:14:09+05:30">
+<meta property="article:tag" content="programming">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">Amrit's Blog</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Archive</a>
+                </li>
+<li class="nav-item">
+<a href="../../pages/about/" class="nav-link">About</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">To GC or not to GC</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Amrit
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2024-05-18T18:14:09+05:30" itemprop="datePublished" title="05-2024">05-2024</time></a>
+            </p>
+            
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p><strong>Disclaimer</strong>: this article is meant for beginners and tech enthusiasts and include purely my opinions.</p>
+<h4><code>Programs require memory management</code></h4>
+<p>Computer memory is a finite resource. By memory, I am referring to the primary memory (RAM) used by the CPU to store, retrieve, and process data of programs during runtime. Typically, an average PC user will have 8 to 16 gigabytes of RAM, which is shared by all the apps running on their PC. Because we have a finite resource in terms of memory, this poses a significant challenge for programmers to effectively manage the resources, i.e., memory, without compromising the reliability and usability of the OS.</p>
+<p>We can understand the problem of memory management with the help of an example: Let's suppose you write a program (in any programming language of your choice) that runs indefinitely to collect a bunch of numbers from the user, store them, and print them in your terminal. It would look like this to the user:</p>
+<div class="code"><pre class="code literal-block"><span class="err">$</span><span class="w"> </span><span class="n">Enter</span><span class="w"> </span><span class="nl">number</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="o">[</span><span class="n">OUT</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">2</span><span class="o">]</span>
+<span class="err">$</span><span class="w"> </span><span class="n">Enter</span><span class="w"> </span><span class="nl">number</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="o">[</span><span class="n">OUT</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">2,4</span><span class="o">]</span>
+<span class="err">$</span><span class="w"> </span><span class="n">Enter</span><span class="w"> </span><span class="nl">number</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="o">[</span><span class="n">OUT</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">2,4,8</span><span class="o">]</span>
+<span class="err">$</span><span class="w"> </span><span class="n">Enter</span><span class="w"> </span><span class="nl">number</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<span class="o">[</span><span class="n">OUT</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">2,4,8,10</span><span class="o">]</span>
+<span class="err">$</span><span class="w"> </span><span class="n">Enter</span><span class="w"> </span><span class="nl">number</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span>
+<span class="o">[</span><span class="n">OUT</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="o">[</span><span class="n">2,4,8,10,6</span><span class="o">]</span>
+</pre></div>
+
+<p>To realize this program I'll write some code in my hypothetical programming language like this:</p>
+<div class="code"><pre class="code literal-block"><span class="nt">number_store</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">NULL</span>
+<span class="nt">while</span><span class="w"> </span><span class="o">(</span><span class="nt">true</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">print("Enter</span><span class="w"> </span><span class="n">number</span><span class="p">:</span><span class="w"> </span><span class="err">"</span><span class="p">);</span>
+<span class="w">    </span><span class="err">x</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">read_number()</span><span class="p">;</span>
+<span class="w">    </span><span class="err">if</span><span class="w"> </span><span class="err">(number_store</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="err">NULL)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">        </span><span class="err">number_store</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">Integer</span><span class="cp">[</span><span class="mi">1</span><span class="cp">]</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="nt">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="err">number_store_new</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">Integer</span><span class="cp">[</span><span class="nx">number_store.current_size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="cp">]</span><span class="p">;</span>
+<span class="w">        </span><span class="err">copy(number_store,</span><span class="w"> </span><span class="err">number_store_new)</span><span class="p">;</span>
+<span class="w">        </span><span class="err">number_store_new</span><span class="cp">[</span><span class="nx">number_store.current_size</span><span class="cp">]</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">x</span><span class="p">;</span>
+<span class="w">        </span><span class="err">number_store</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">number_store_new</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">print</span><span class="o">(</span><span class="nt">number_store</span><span class="o">);</span>
+<span class="err">}</span>
+</pre></div>
+
+<p>The above code is quite straightforward. Here, we allow the user to enter a number and then save that number in an array after increasing its size by one. When we create an array with the new keyword, in the background, the language reserves some memory space. Initially, memory space equivalent to size 1 is reserved, but as the user enters more numbers, more memory is reserved. However, this leads to a fundamental problem! When we create a new array and assign the old variable to this new array, what happens to the old array and the memory we allocated to it during runtime? Where does that memory go?</p>
+<p>The answer is that it doesn't go anywhere! It still resides in the memory of our PC. As long as our program executes, the memory we reserved will be locked and unusable by any other program. This phenomenon is also known as a <a href="https://en.wikipedia.org/wiki/Memory_leak">Memory Leak</a> in computer science lingo.</p>
+<p>We can solve this problem by introducing functionality to free up the memory that is no longer requires as follows:</p>
+<div class="code"><pre class="code literal-block"><span class="n">number_store</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NULL</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="bp">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">"Enter number: "</span><span class="p">);</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read_number</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">number_store</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">number_store</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">Integer</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="w">        </span><span class="n">number_store</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">number_store_new</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">Integer</span><span class="p">[</span><span class="n">number_store</span><span class="o">.</span><span class="n">current_size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="w">        </span><span class="n">copy</span><span class="p">(</span><span class="n">number_store</span><span class="p">,</span><span class="w"> </span><span class="n">number_store_new</span><span class="p">);</span>
+<span class="w">        </span><span class="n">number_store_new</span><span class="p">[</span><span class="n">number_store</span><span class="o">.</span><span class="n">current_size</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">delete</span><span class="w"> </span><span class="n">number_store</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">deallocate</span><span class="w"> </span><span class="n">old</span><span class="w"> </span><span class="n">memory</span>
+<span class="w">        </span><span class="n">number_store</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number_store_new</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">assign</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">old</span><span class="w"> </span><span class="n">variable</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">number_store</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>However ingenious this solution may look, it's not new. Primitive but high-level programming languages like C and C++ already have library functions such as <code>alloc</code>, <code>free</code>, <code>new</code>, <code>delete</code>, etc., that perform this task. But manual memory management like this puts extra strain on developers to write memory management logic in addition to complex business code. Hence, there is a need for a tool or application that can run behind the scenes to manage memory with minimal to no programmer intervention.</p>
+<h4><code>Garbage Collectors solves memory management</code></h4>
+<p>To solve the problem of automatic garbage collection, the <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">LISP programming language</a> introduced <a href="https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)">garbage collection</a> for the first time. Garbage collectors are programs that run implicitly during the runtime of a program and free up memory that is no longer required by the program, allowing other programs to utilize the blocks. For example, in our program above, a garbage collector would typically free up the memory space acquired by the old array once we copy the values from the old memory. Garbage collectors can run many algorithms to detect redundant memory space acquired by the program to free them. We won't be going into any such algorithms in this article.</p>
+<h4><code>Garbage Collectors become problem themselves</code></h4>
+<p>Garbage collectors solved crucial memory management issues by preventing leaks, but they add runtime overhead, reducing overall performance. In the <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java programming language</a>, each JVM instance runs its own garbage collector, which makes Java programs inefficient in terms of performance. Running GC in Java causes an increase in pause time while cleaning the memory, overhead in the heap memory, which again resides in the primary memory, increased latency, and more CPU usage. In addition to this, the efficiency of GCs also comes with the underlying running algorithms, which may cause complexity in certain use cases.</p>
+<h4><code>Can we do without garbage collectors?</code></h4>
+<p>The use of GC in programming languages is a boon for developers, but they do come at a cost. So a natural question arises: can we do without a GC? Or can we figure out a solution where the tradeoff between manually managing the memory and automatically preventing memory leaks can be effective? The answer to this question may lie in the new programming language on the horizon: <a href="https://en.wikipedia.org/wiki/Rust_(programming_language)">Rust</a>.</p>
+<p>Rust is a fairly new programming language with C-like syntax that has removed both manual memory management modules as well as the Garbage Collector. Rust has implemented strict rules in syntax to prevent developers from ever occupying redundant memory space by implementing <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII (Resource Acquisition Is Initialization)</a> through proposing the concept of <a href="https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html">ownership</a>. In a nutshell, the concept of ownership tells us that each memory space currently occupied in the language will have an owner. If the owner of the memory dies, is removed, or is reassigned to another memory space, then that memory space is immediately deallocated. Additionally, an owner may own more than one memory space, which is completely fine, but if the owner is removed, then all the memory is also removed.</p>
+<p>Implementing solutions like RAII again comes at a cost. Since the onus is now on the language to prevent developers from creating duplicate owners of memory space, it restricts developers from free-style and multi-paradigm coding.</p>
+<h4><code>Conclusion</code></h4>
+<p>With this, we have reached the end of our article: "To GC or not To GC." Rust has provided us with an example of how a language can operate without the implementation of GC in the language runtime, making itself fast and efficient. The trade-off on syntax strictness is also fair, as developers don't have to worry about manual memory management. However, GCs exist in almost all popular programming languages like Go, Python, Swift, etc., and aren't going anywhere. I believe that in the future, a solution must emerge that tries to solve the problem of memory management with a mix of both concepts: Garbage Collection and RAII.</p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/programming/" rel="tag">programming</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../simple-path-to-get-good-in-dsa/" rel="prev" title="Simple path to get good in DSA">Previous post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer">
+            Contents © 2024         <a href="mailto:mail.amritpandey@sap.com">Amrit</a>
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>
