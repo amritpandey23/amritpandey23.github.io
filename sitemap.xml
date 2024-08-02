@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://example.com/archive.html</loc>
-  <lastmod>2024-05-24T10:29:00Z</lastmod>
+  <lastmod>2024-08-02T12:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/</loc>
@@ -76,6 +76,10 @@
  <url>
   <loc>https://example.com/posts/model-view-presenter-mvp-architecture/</loc>
   <lastmod>2024-02-04T17:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/posts/playstation-vs-xbox-dilemma/</loc>
+  <lastmod>2024-08-02T12:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/posts/simple-path-to-get-good-in-dsa/</loc>
