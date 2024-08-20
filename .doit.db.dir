@@ -43,7 +43,7 @@
 'robots_file:output\\robots.txt', (31744, 136)
 'render_galleries:output\\galleries\\rss.xml', (404992, 6883)
 'copy_assets:output\\assets\\css\\nikola_ipython.css', (35328, 420)
-'sitemap:output\\sitemap.xml', (861696, 7050)
+'sitemap:output\\sitemap.xml', (861696, 7049)
 'copy_assets:output\\assets\\css\\bootstrap.min.css', (305152, 670)
 'copy_assets:output\\assets\\css\\rst.css', (37376, 397)
 'copy_assets:output\\assets\\js\\baguetteBox.min.js', (37888, 419)
