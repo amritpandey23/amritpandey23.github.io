@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://example.com/archive.html</loc>
-  <lastmod>2024-08-02T12:48:00Z</lastmod>
+  <lastmod>2024-09-27T15:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/</loc>
-  <lastmod>2024-03-02T11:34:00Z</lastmod>
+  <lastmod>2024-09-27T15:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/career/</loc>
@@ -48,6 +48,10 @@
  <url>
   <loc>https://example.com/categories/linux/</loc>
   <lastmod>2024-02-14T07:48:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/categories/offtopic/</loc>
+  <lastmod>2024-09-27T15:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/programming/</loc>
@@ -88,6 +92,10 @@
  <url>
   <loc>https://example.com/posts/some-invaluable-tips-for-programmers/</loc>
   <lastmod>2024-02-14T08:02:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/posts/the-winter-arc/</loc>
+  <lastmod>2024-09-27T15:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/posts/unix-bsd-minix-linux-what-who-and-when/</loc>
