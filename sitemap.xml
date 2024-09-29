@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://example.com/archive.html</loc>
-  <lastmod>2024-09-27T15:52:00Z</lastmod>
+  <lastmod>2024-09-29T07:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/</loc>
-  <lastmod>2024-09-27T15:59:00Z</lastmod>
+  <lastmod>2024-09-27T16:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/career/</loc>
@@ -50,10 +50,6 @@
   <lastmod>2024-02-14T07:48:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/offtopic/</loc>
-  <lastmod>2024-09-27T15:59:00Z</lastmod>
- </url>
- <url>
   <loc>https://example.com/categories/programming/</loc>
   <lastmod>2024-03-02T11:34:00Z</lastmod>
  </url>
@@ -72,6 +68,10 @@
  <url>
   <loc>https://example.com/pages/goals/</loc>
   <lastmod>2024-02-04T17:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/posts/a-simple-and-scalable-architecture-for-your-next-to-do-app/</loc>
+  <lastmod>2024-09-29T07:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/posts/garbage-collector-then-a-boon-now-a-curse/</loc>

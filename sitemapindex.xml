@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://example.com/categories/career.xml</loc>
-  <lastmod>2024-09-27T15:59:00Z</lastmod>
+  <lastmod>2024-09-27T16:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/categories/cat_offtopic.xml</loc>
-  <lastmod>2024-02-14T07:55:00Z</lastmod>
+  <lastmod>2024-09-27T16:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/categories/cat_programming.xml</loc>
@@ -30,10 +30,6 @@
   <lastmod>2024-02-14T07:55:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://example.com/categories/offtopic.xml</loc>
-  <lastmod>2024-09-27T15:59:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://example.com/categories/programming.xml</loc>
   <lastmod>2024-05-18T17:35:00Z</lastmod>
  </sitemap>
@@ -47,10 +43,10 @@
  </sitemap>
  <sitemap>
   <loc>https://example.com/rss.xml</loc>
-  <lastmod>2024-09-27T15:59:00Z</lastmod>
+  <lastmod>2024-09-29T07:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/sitemap.xml</loc>
-  <lastmod>2024-09-27T15:59:00Z</lastmod>
+  <lastmod>2024-09-29T07:33:00Z</lastmod>
  </sitemap>
 </sitemapindex>

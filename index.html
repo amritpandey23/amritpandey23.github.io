@@ -11,7 +11,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
 <link rel="canonical" href="https://example.com/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/the-winter-arc/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/a-simple-and-scalable-architecture-for-your-next-to-do-app/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -65,7 +65,98 @@ bg-dark
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/the-winter-arc/" class="u-url">The Winter Arc</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/a-simple-and-scalable-architecture-for-your-next-to-do-app/" class="u-url">A Simple and Scalable Architecture for Your Next To-Do App</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Amrit
+            </span></p>
+            <p class="dateline">
+            <a href="posts/a-simple-and-scalable-architecture-for-your-next-to-do-app/" rel="bookmark">
+            <time class="published dt-published" datetime="2024-09-29T13:02:12+05:30" itemprop="datePublished" title="09-2024">09-2024</time></a>
+            </p>
+        </div>
+    </header><div class="e-content entry-content">
+    <p>I proposed in one of my <a href="https://www.linkedin.com/posts/amritpandey23_if-youre-planning-your-next-personal-crud-activity-7245635838242365440-UMHU?utm_source=share&amp;utm_medium=member_desktop">LinkedIn posts</a> that personal projects involving CRUD operations have now become somewhat obsolete and don’t teach significant skills. I suggested that if CRUD projects adopt a client-server architecture, it would spice things up and also teach a lot about decoupling and scalable application development. In this post, I am proposing a simple client-server architecture for your personal project.</p>
+<hr>
+<h3>The Architecture at a Glance</h3>
+<p>This architecture consists of five main components:</p>
+<ol>
+<li>
+<strong>Client Application (Frontend)</strong> - Let’s say <a href="https://react.dev/">React.js</a>.</li>
+<li>
+<strong>Reverse Proxy</strong> - <a href="https://nginx.org/en/">Nginx</a> for securing and balancing incoming HTTP requests toward front-end and back-end services.</li>
+<li>
+<strong>Application Server (Backend)</strong> - <a href="https://flask.palletsprojects.com/en/3.0.x/">Flask</a> API running on <a href="https://gunicorn.org/">Gunicorn</a> to handle concurrent requests.</li>
+<li>
+<strong>Database</strong> - <a href="https://www.postgresql.org/">PostgreSQL</a> for data persistence, backup, and sync.</li>
+<li>
+<strong>Hosting</strong> - This setup is designed to be hosted on cloud virtual instances like AWS <a href="https://aws.amazon.com/ec2/">EC2</a> or Google Cloud Platform <a href="https://cloud.google.com/products/compute">Compute Engine</a>.</li>
+</ol>
+<hr>
+<h3>How it Works</h3>
+<p><img alt="" src="images/simple-scalable-arch-next-todo-app.png"></p>
+<p><strong>1. Client Side</strong>:</p>
+<ul>
+<li>The user interacts with the <strong>client application</strong>, which can be built using <strong>React.js</strong> or any other framework. I believe that the front end is just an implementation detail and can reside on multiple platforms. The frontend only handles the UI logic and user-generated data.</li>
+<li>When the user interacts with the UI (e.g., clicking a button to add a task), the client captures these actions as <strong>events</strong> and sends them as <strong>API calls</strong> to the backend via <strong>HTTP requests</strong>.</li>
+</ul>
+<p><strong>2. Nginx as a Reverse Proxy</strong>:</p>
+<ul>
+<li>All incoming requests from the client first pass through <strong>Nginx</strong>, which acts as a <strong>reverse proxy</strong>.</li>
+<li>Nginx forwards the API requests to the Flask server (running on Gunicorn), ensuring that the backend is never directly exposed to the client. This also helps with load balancing by distributing traffic across multiple backend instances if necessary.</li>
+</ul>
+<p><strong>3. Flask REST API on Gunicorn</strong>:</p>
+<ul>
+<li>The core of the application is the <strong>Flask REST API</strong>. This API receives the API requests from the frontend, processes the logic (e.g., creating or updating an item), and interacts with the <strong>PostgreSQL database</strong> to store or retrieve the necessary data.</li>
+<li>
+<strong>Gunicorn</strong>, the application server, ensures that multiple requests can be handled concurrently, improving the overall performance of the application.</li>
+</ul>
+<p><strong>4. PostgreSQL Database</strong>:</p>
+<ul>
+<li>The <strong>PostgreSQL database</strong> stores all the persistent data, such as the items created by the user.</li>
+<li>Each API request that involves adding, updating, or deleting an item interacts with this database, ensuring that all changes are stored reliably.</li>
+</ul>
+<p><strong>5. Backup Database</strong>:</p>
+<ul>
+<li>For added reliability, a <strong>backup database</strong> is often used. This database stores a copy of the main PostgreSQL database, ensuring that if any issues arise, the data is safe and can be restored quickly.</li>
+<li>This ensures that even if the primary database goes down, your data will remain intact.</li>
+</ul>
+<p><strong>6. Cloud Hosting (AWS/GCP)</strong>:</p>
+<ul>
+<li>The entire architecture is hosted on cloud platforms like <strong>AWS EC2</strong> or <strong>GCP Compute Engine</strong>, making it highly accessible and scalable. This setup allows you to expand your application as needed, whether that involves adding more frontend or backend instances to handle increased traffic or simply ensuring your app is accessible from any device. However, infrastructure scaling is not part of this architecture.</li>
+</ul>
+<hr>
+<h3>Why This Architecture Works Well</h3>
+<p><strong>1. Separation of Concerns</strong>:</p>
+<ul>
+<li>In this architecture, the <strong>frontend</strong> and <strong>backend</strong> are completely decoupled. The frontend handles the user interface (UI) and communicates with the backend through secure <strong>REST APIs</strong>.</li>
+<li>This decoupling allows you to work on either the UI or backend independently without breaking the other. For example, you can update your React frontend while keeping the Flask API unchanged, or vice versa.</li>
+</ul>
+<p><strong>2. Security with Nginx</strong>:</p>
+<ul>
+<li>One of the key security advantages is that the <strong>client never interacts directly with the backend</strong>. Instead, user events (like adding new data) are captured by the frontend and sent as API requests.</li>
+<li>
+<strong>Nginx</strong>, acting as a reverse proxy, sits between the client and the Flask server, forwarding these API calls securely. This setup reduces the server's exposure to the public internet, ensuring a more secure environment for your backend services.</li>
+</ul>
+<p><strong>3. Gunicorn for Load Balancing</strong>:</p>
+<ul>
+<li>
+<strong>Gunicorn</strong> is the WSGI server that powers the Flask app, ensuring that multiple API requests can be processed concurrently. This means your backend can handle more traffic, making the app scalable as user demand grows.</li>
+<li>Gunicorn efficiently manages requests, improving the app's ability to scale without slowing down under load.</li>
+</ul>
+<p><strong>4. Data Reliability with a Backup DB</strong>:</p>
+<ul>
+<li>While not essential for every app, adding a <strong>Backup Database</strong> ensures that you don’t lose important data if something goes wrong with your main database. This PostgreSQL backup can sync automatically with the primary database, providing peace of mind in the event of failure.</li>
+</ul>
+<p><strong>5. Cloud Hosting for Flexibility</strong>:</p>
+<ul>
+<li>If you decide to turn your to-do app into a mobile or desktop app later, you can simply connect to the same backend without making major changes.</li>
+<li>Additionally, cloud services often come with built-in features like autoscaling, load balancing, and security options to further enhance your app’s performance and reliability at a later stage.</li>
+</ul>
+<hr>
+<p>Whether you're building your first to-do app or a more complex project, this client-server architecture offers a strong foundation. Its modular design allows for easy development and updates, its security features keep your data and server safe, and its cloud-hosted flexibility enables future expansion. With a clear separation of concerns, a scalable backend, and robust data handling, you can confidently build apps that are both simple and powerful.</p>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/the-winter-arc/" class="u-url">The Winter Arc</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Amrit
@@ -1232,7 +1323,7 @@ PS. Yes - it's free of any minix code, and it has a multi-threaded fs. It is NOT
             </span></p>
             <p class="dateline">
             <a href="posts/why-do-we-need-tests/" rel="bookmark">
-            <time class="published dt-published" datetime="2019-06-27T00:00:00+05:30" itemprop="datePublished" title="06-2019">06-2019</time></a>
+            <time class="published dt-published" datetime="2019-06-29T00:00:00+05:30" itemprop="datePublished" title="06-2019">06-2019</time></a>
             </p>
         </div>
     </header><div class="e-content entry-content">
