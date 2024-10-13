@@ -15,7 +15,7 @@
  </sitemap>
  <sitemap>
   <loc>https://example.com/categories/cat_programming.xml</loc>
-  <lastmod>2024-05-18T17:35:00Z</lastmod>
+  <lastmod>2024-09-29T08:07:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/categories/golang.xml</loc>
@@ -39,14 +39,14 @@
  </sitemap>
  <sitemap>
   <loc>https://example.com/categories/webdev.xml</loc>
-  <lastmod>2024-02-14T07:46:00Z</lastmod>
+  <lastmod>2024-09-29T08:07:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/rss.xml</loc>
-  <lastmod>2024-09-29T07:33:00Z</lastmod>
+  <lastmod>2024-10-13T08:17:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/sitemap.xml</loc>
-  <lastmod>2024-09-29T07:33:00Z</lastmod>
+  <lastmod>2024-10-13T08:17:00Z</lastmod>
  </sitemap>
 </sitemapindex>
