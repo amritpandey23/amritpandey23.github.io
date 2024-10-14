@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://example.com/</loc>
-  <lastmod>2024-10-12T11:07:00Z</lastmod>
+  <lastmod>2024-10-13T08:57:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/2019/</loc>
@@ -62,10 +62,6 @@
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/index-1.html</loc>
-  <lastmod>2024-10-12T11:07:00Z</lastmod>
- </url>
- <url>
   <loc>https://example.com/pages/about/</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </url>
@@ -80,10 +76,6 @@
  <url>
   <loc>https://example.com/posts/garbage-collector-then-a-boon-now-a-curse/</loc>
   <lastmod>2024-05-18T12:44:00Z</lastmod>
- </url>
- <url>
-  <loc>https://example.com/posts/how-do-semantic-search-work/</loc>
-  <lastmod>2024-10-12T11:07:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/posts/model-view-presenter-mvp-architecture/</loc>
