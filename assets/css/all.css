@@ -926,42 +926,118 @@ html[dir="rtl"] body {
     min-height: 25px;
 }
 
-.navbar-brand {
-    font-family: 'Times New Roman', Times, serif;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  margin: 3rem 0 1rem 0;
+}
+
+.previous > a,
+.next > a,
+table,
+tr {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Basic Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Headers */
+thead th {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Table Body Rows */
+tbody tr {
+  font-weight: 400;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Table Cells */
+td,
+th {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Highlight specific cell */
+td.important {
+  color: #e53935;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
 }
 
 .body-content {
-    max-width: 840px !important;
-    margin: 0 auto;
+  max-width: 800px !important;
+  margin: 0 auto;
 }
 
-p {
-    line-height: 1.6;
-    text-align: justify;
+p,
+li:not(.nav-item) {
+  line-height: 1.8;
+  font-family: "PT Serif", serif;
+  font-style: normal;
+  font-size: 20px;
+  color: #535353;
+  margin-bottom: 1rem;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: 'Cormorant', 'Times New Roman', Times, serif;
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h4,
 h5,
 h6 {
-    font-weight: 600;
-}
+  font-weight: 600;
+} */
 
 blockquote {
-    border-left: 10px solid #007bff;
-    padding-left: 20px;
-    font-style: italic;
+  border-left: 10px solid #007bff;
+  padding-left: 20px;
+  font-style: italic;
 }
 
 blockquote p {
-    font-size: 1.1rem;
-    line-height: 1.3;
+  font-size: 1.1rem;
+  line-height: 1.3;
 }
+
