@@ -1089,6 +1089,7 @@ div.code > pre {
 p > img:only-child {
   display: block;
   margin: 0 auto;
+  width: 100%;
   max-width: 720px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   border-radius: 8px; /* Soft rounded corners */
