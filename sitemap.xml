@@ -6,107 +6,143 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
-  <loc>https://example.com/</loc>
-  <lastmod>2024-10-13T08:57:00Z</lastmod>
+  <loc>https://amritpandey23.github.io/</loc>
+  <lastmod>2024-10-27T11:04:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/2019/</loc>
+  <loc>https://amritpandey23.github.io/2019/</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/2024/</loc>
+  <loc>https://amritpandey23.github.io/2024/</loc>
   <lastmod>2024-02-04T17:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/archive.html</loc>
-  <lastmod>2024-10-13T08:17:00Z</lastmod>
+  <loc>https://amritpandey23.github.io/archive.html</loc>
+  <lastmod>2024-10-27T11:14:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/</loc>
+  <loc>https://amritpandey23.github.io/categories/</loc>
   <lastmod>2024-09-27T16:03:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/career/</loc>
+  <loc>https://amritpandey23.github.io/categories/career/</loc>
   <lastmod>2024-03-02T11:34:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/cat_offtopic/</loc>
+  <loc>https://amritpandey23.github.io/categories/cat_offtopic/</loc>
   <lastmod>2024-02-14T07:48:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/cat_programming/</loc>
+  <loc>https://amritpandey23.github.io/categories/cat_programming/</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/golang/</loc>
+  <loc>https://amritpandey23.github.io/categories/golang/</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/javascript/</loc>
+  <loc>https://amritpandey23.github.io/categories/javascript/</loc>
   <lastmod>2024-02-14T07:44:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/linux/</loc>
+  <loc>https://amritpandey23.github.io/categories/linux/</loc>
   <lastmod>2024-02-14T07:48:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/programming/</loc>
+  <loc>https://amritpandey23.github.io/categories/programming/</loc>
   <lastmod>2024-03-02T11:34:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/software-development/</loc>
+  <loc>https://amritpandey23.github.io/categories/software-development/</loc>
   <lastmod>2024-02-04T17:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/categories/webdev/</loc>
+  <loc>https://amritpandey23.github.io/categories/webdev/</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/pages/about/</loc>
+  <loc>https://amritpandey23.github.io/index-1.html</loc>
+  <lastmod>2024-10-27T11:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://amritpandey23.github.io/index-2.html</loc>
+  <lastmod>2024-10-27T11:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://amritpandey23.github.io/index-3.html</loc>
+  <lastmod>2024-10-27T11:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://amritpandey23.github.io/index-4.html</loc>
+  <lastmod>2024-10-27T11:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://amritpandey23.github.io/index-5.html</loc>
+  <lastmod>2024-10-27T11:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://amritpandey23.github.io/index-6.html</loc>
+  <lastmod>2024-10-27T11:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://amritpandey23.github.io/index-7.html</loc>
+  <lastmod>2024-10-27T11:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://amritpandey23.github.io/index-8.html</loc>
+  <lastmod>2024-10-27T11:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://amritpandey23.github.io/index-9.html</loc>
+  <lastmod>2024-10-27T11:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://amritpandey23.github.io/pages/about/</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/pages/goals/</loc>
+  <loc>https://amritpandey23.github.io/pages/goals/</loc>
   <lastmod>2024-02-04T17:26:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/a-simple-and-scalable-architecture-for-your-next-to-do-app/</loc>
+  <loc>https://amritpandey23.github.io/posts/a-simple-and-scalable-architecture-for-your-next-to-do-app/</loc>
   <lastmod>2024-09-29T07:33:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/garbage-collector-then-a-boon-now-a-curse/</loc>
+  <loc>https://amritpandey23.github.io/posts/garbage-collector-then-a-boon-now-a-curse/</loc>
   <lastmod>2024-05-18T12:44:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/model-view-presenter-mvp-architecture/</loc>
+  <loc>https://amritpandey23.github.io/posts/model-view-presenter-mvp-architecture/</loc>
   <lastmod>2024-02-04T17:32:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/playstation-vs-xbox-dilemma/</loc>
+  <loc>https://amritpandey23.github.io/posts/playstation-vs-xbox-dilemma/</loc>
   <lastmod>2024-08-02T12:48:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/simple-path-to-get-good-in-dsa/</loc>
+  <loc>https://amritpandey23.github.io/posts/simple-path-to-get-good-in-dsa/</loc>
   <lastmod>2024-03-02T11:25:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/some-invaluable-tips-for-programmers/</loc>
+  <loc>https://amritpandey23.github.io/posts/some-invaluable-tips-for-programmers/</loc>
   <lastmod>2024-02-14T08:02:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/the-winter-arc/</loc>
+  <loc>https://amritpandey23.github.io/posts/the-winter-arc/</loc>
   <lastmod>2024-09-27T15:52:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/unix-bsd-minix-linux-what-who-and-when/</loc>
+  <loc>https://amritpandey23.github.io/posts/unix-bsd-minix-linux-what-who-and-when/</loc>
   <lastmod>2024-02-14T07:47:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/what-go-programming-language-does-and-does-not-have/</loc>
+  <loc>https://amritpandey23.github.io/posts/what-go-programming-language-does-and-does-not-have/</loc>
   <lastmod>2024-01-28T13:43:00Z</lastmod>
  </url>
  <url>
-  <loc>https://example.com/posts/why-do-we-need-tests/</loc>
+  <loc>https://amritpandey23.github.io/posts/why-do-we-need-tests/</loc>
   <lastmod>2024-02-14T07:43:00Z</lastmod>
  </url>
 </urlset>

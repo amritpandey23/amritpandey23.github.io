@@ -4,16 +4,18 @@
 .. date: 2024-05-18 18:14:09 UTC+05:30
 .. tags: programming
 .. category: programming
-.. link: 
+.. link:
 .. description: Garbage Collectors solved crucial memory management issues by preventing leaks, but they add runtime overhead, reducing overall performance. With languages like Rust that omits GC for more efficient memory management, it's worth questioning whether new programming languages still need garbage collectors.
 .. type: text
 -->
 
-**Disclaimer**: this article is meant for beginners and tech enthusiasts and include purely my opinions.
+_**Disclaimer**: this article is meant for beginners and tech enthusiasts and include purely my opinions._
 
-###`Programs require memory management`
+---
 
-Computer memory is a finite resource. By memory, I am referring to the primary memory (RAM) used by the CPU to store, retrieve, and process data of programs during runtime. Typically, an average PC user will have 8 to 16 gigabytes of RAM, which is shared by all the apps running on their PC. Because we have a finite resource in terms of memory, this poses a significant challenge for programmers to effectively manage the resources, i.e., memory, without compromising the reliability and usability of the OS.
+## Programs require memory management
+
+Computer memory is a finite resource. By memory, I am referring to the primary memory (RAM) used by the OS to store, retrieve, and process data of programs during runtime. Typically, an average PC user will have 8 to 16 gigabytes of RAM, which is shared by all the apps running on their PC. Because we have a finite resource in terms of memory, this poses a significant challenge for programmers to effectively manage the resources, i.e., memory, without compromising the reliability and usability of the OS.
 
 We can understand the problem of memory management with the help of an example: Let's suppose you write a program (in any programming language of your choice) that runs indefinitely to collect a bunch of numbers from the user, store them, and print them in your terminal. It would look like this to the user:
 
@@ -55,7 +57,7 @@ The answer is that it doesn't go anywhere! It still resides in the memory of our
 
 We can solve this problem by introducing functionality to free up the memory that is no longer requires as follows:
 
-```
+```py
 number_store = NULL
 while (true) {
     print("Enter number: ");
@@ -76,22 +78,24 @@ while (true) {
 
 However ingenious this solution may look, it's not new. Primitive but high-level programming languages like C and C++ already have library functions such as `alloc`, `free`, `new`, `delete`, etc., that perform this task. But manual memory management like this puts extra strain on developers to write memory management logic in addition to complex business code. Hence, there is a need for a tool or application that can run behind the scenes to manage memory with minimal to no programmer intervention.
 
-###`Garbage Collectors solves memory management`
+This memory which has no use to the program during runtime and yet resides in the memory is referred to as _Garbage_.
 
-To solve the problem of automatic garbage collection, the [LISP programming language](https://en.wikipedia.org/wiki/Lisp_(programming_language)) introduced [garbage collection](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)) for the first time. Garbage collectors are programs that run implicitly during the runtime of a program and free up memory that is no longer required by the program, allowing other programs to utilize the blocks. For example, in our program above, a garbage collector would typically free up the memory space acquired by the old array once we copy the values from the old memory. Garbage collectors can run many algorithms to detect redundant memory space acquired by the program to free them. We won't be going into any such algorithms in this article.
+## Garbage Collectors solves memory management
 
-###`Garbage Collectors become problem themselves`
+To solve the problem of automatic garbage collection, the [LISP programming language](<https://en.wikipedia.org/wiki/Lisp_(programming_language)>) introduced [garbage collection](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) for the first time. Garbage collectors are programs that run implicitly during the runtime of a program and free up memory that is no longer required by the program, allowing other programs to utilize the blocks. For example, in our program above, if we use a garbage collector we would typically make it to free up the memory space acquired by the old array once we copy the values from the old memory whenever a user enter new number. In real world, garbage collectors are complex components and use sophesticated algorithms to free up the memory during runtime. However, we aren't going to discuss such algorithms here.
 
-Garbage collectors solved crucial memory management issues by preventing leaks, but they add runtime overhead, reducing overall performance. In the [Java programming language](https://en.wikipedia.org/wiki/Java_(programming_language)), each JVM instance runs its own garbage collector, which makes Java programs inefficient in terms of performance. Running GC in Java causes an increase in pause time while cleaning the memory, overhead in the heap memory, which again resides in the primary memory, increased latency, and more CPU usage. In addition to this, the efficiency of GCs also comes with the underlying running algorithms, which may cause complexity in certain use cases.
+## Garbage Collectors become problem themselves
 
-###`Can we do without garbage collectors?`
+Garbage collectors solve crucial memory management issues by preventing leaks, but they add runtime overhead, reducing overall performance. In the [Java programming language](<https://en.wikipedia.org/wiki/Java_(programming_language)>), each JVM instance runs its own garbage collector, which makes Java programs inefficient in terms of performance. Running GC in Java causes an increase in pause time while cleaning the memory, overhead in the heap memory which resides in the primary memory, increased latency, and more CPU usage. In addition to this, the efficiency of GCs also comes with the underlying running algorithms, which may cause complexity in certain use cases. It's conclusive to say that, as programming language carries a liability of memory management, solving this problem leads to even problems fulfilling the adage that _Programs themselves are bugs_.
 
-The use of GC in programming languages is a boon for developers, but they do come at a cost. So a natural question arises: can we do without a GC? Or can we figure out a solution where the tradeoff between manually managing the memory and automatically preventing memory leaks can be effective? The answer to this question may lie in the new programming language on the horizon: [Rust](https://en.wikipedia.org/wiki/Rust_(programming_language)).
+## Can we do without garbage collectors?
+
+The use of GC in programming languages is a boon for developers, but they do come at a cost. So a natural question arises: can we do without a GC? Or can we figure out a solution where the tradeoff between manually managing the memory and automatically preventing memory leaks can be effective? The answer to this question may lie in the new programming language on the horizon: [Rust](<https://en.wikipedia.org/wiki/Rust_(programming_language)>).
 
 Rust is a fairly new programming language with C-like syntax that has removed both manual memory management modules as well as the Garbage Collector. Rust has implemented strict rules in syntax to prevent developers from ever occupying redundant memory space by implementing [RAII (Resource Acquisition Is Initialization)](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) through proposing the concept of [ownership](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html). In a nutshell, the concept of ownership tells us that each memory space currently occupied in the language will have an owner. If the owner of the memory dies, is removed, or is reassigned to another memory space, then that memory space is immediately deallocated. Additionally, an owner may own more than one memory space, which is completely fine, but if the owner is removed, then all the memory is also removed.
 
 Implementing solutions like RAII again comes at a cost. Since the onus is now on the language to prevent developers from creating duplicate owners of memory space, it restricts developers from free-style and multi-paradigm coding.
 
-###`Conclusion`
+## Conclusion
 
 With this, we have reached the end of our article: "To GC or not To GC." Rust has provided us with an example of how a language can operate without the implementation of GC in the language runtime, making itself fast and efficient. The trade-off on syntax strictness is also fair, as developers don't have to worry about manual memory management. However, GCs exist in almost all popular programming languages like Go, Python, Swift, etc., and aren't going anywhere. I believe that in the future, a solution must emerge that tries to solve the problem of memory management with a mix of both concepts: Garbage Collection and RAII.

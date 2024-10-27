@@ -3,24 +3,17 @@
 " lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="MVP architecture was first proposed by Taligent Inc. a subsidiary of IBM in 1996 as a success to popular MVC architecture for building modern apps.">
+<meta name="description" content="Blog site of Amrit">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MVP: An improvement over Model View Controller | Amrit's Blog</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<title>Amrit's Blog (old posts, page 5) | Amrit's Blog</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
-<link rel="canonical" href="https://amritpandey23.github.io/posts/model-view-presenter-mvp-architecture/">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Amrit">
-<link rel="prev" href="../unix-bsd-minix-linux-what-who-and-when/" title="Unix, BSD, Minix, Linux - What, Who and When" type="text/html">
-<link rel="next" href="../simple-path-to-get-good-in-dsa/" title="Simple path to get good in DSA" type="text/html">
-<meta property="og:site_name" content="Amrit's Blog">
-<meta property="og:title" content="MVP: An improvement over Model View Controller">
-<meta property="og:url" content="https://amritpandey23.github.io/posts/model-view-presenter-mvp-architecture/">
-<meta property="og:description" content="MVP architecture was first proposed by Taligent Inc. a subsidiary of IBM in 1996 as a success to popular MVC architecture for building modern apps.">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2024-02-04T23:01:29+05:30">
-<meta property="article:tag" content="software development">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
+<link rel="canonical" href="https://amritpandey23.github.io/index-5.html">
+<link rel="prev" href="index-6.html" type="text/html">
+<link rel="next" href="index-4.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -32,7 +25,7 @@ navbar-light
 bg-light
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href="../../">
+        <a class="navbar-brand" href=".">
 
             <span id="blog-title">Amrit's Blog</span>
         </a>
@@ -43,16 +36,16 @@ bg-light
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item">
-<a href="../../archive.html" class="nav-link">Archive</a>
+<a href="archive.html" class="nav-link">Archive</a>
                 </li>
 <li class="nav-item">
-<a href="../../pages/about/" class="nav-link">About</a>
+<a href="pages/about/" class="nav-link">About</a>
             </li>
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Meta</a>
             <div class="dropdown-menu">
-                    <a href="../../categories/" class="dropdown-item">Tags</a>
-                    <a href="../../rss.xml" class="dropdown-item">RSS feed</a>
+                    <a href="categories/" class="dropdown-item">Tags</a>
+                    <a href="rss.xml" class="dropdown-item">RSS feed</a>
             </div>
 
                 
@@ -82,25 +75,26 @@ bg-light
         
         
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">MVP: An improvement over Model View Controller</a></h1>
 
+    
+
+
+    
+<div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/model-view-presenter-mvp-architecture/" class="u-url">MVP: An improvement over Model View Controller</a></h1>
         <div class="metadata">
-            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
-                    Amrit
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Amrit
             </span></p>
             <p class="dateline">
-            <a href="." rel="bookmark">
+            <a href="posts/model-view-presenter-mvp-architecture/" rel="bookmark">
             <time class="published dt-published" datetime="2024-02-04T23:01:29+05:30" itemprop="datePublished" title="02-2024">02-2024</time></a>
             </p>
-            
-
         </div>
-        
-
-    </header><div class="e-content entry-content" itemprop="articleBody text">
+    </header><div class="e-content entry-content">
     <p>Model View Presenter (MVP) is a pivotal software architecture introduced by Taligent Inc. in 1996. Emerging as an enhancement over the then prevalent Smalltalk programming model, which was built upon the foundations laid by the Model View Controller (MVC) architecture. In this article, we delve into the essence of MVP, contextualizing its significance by examining the limitations of still popular Model View Controller (MVC) application programming architecture and also developing a simple MVP app to demonstrate how MVP solves some intrinct limitations of MVC.</p>
 <p>Some examples and concepts are directly derived from the 1996 paper[1] published by Mike Potel.</p>
-<p><img alt="" src="../../images/mvp_diagram.png"></p>
+<p><img alt="" src="images/mvp_diagram.png"></p>
 <p><em>Fig.1: Model View Presenter</em></p>
 <h3>Model View Controller</h3>
 <p>The Model View Controller (MVC) framework stands as a widely embraced approach for crafting diverse applications, offering a clear division of the business logic into three key components: Model, View, and Controller.</p>
@@ -108,23 +102,23 @@ bg-light
 <p>Meanwhile, the View component serves the crucial role of presenting this data to users, facilitating an intuitive and engaging user interface.</p>
 <p>The Controller acts as the intermediary, adeptly handling requests originating from the View and orchestrating corresponding updates within the Model. Communication follows a unidirectional flow from the View to the Controller and from the Controller to the Model. However, the communication between the View and Model is bidirectional, allowing for seamless synchronization. Consequently, any alterations made in the Model reflect in the View, and vice versa.</p>
 <h5>Simple Example of a MVC app</h5>
-<p><img alt="" src="../../images/phone_book_app_mockup.png"></p>
+<p><img alt="" src="images/phone_book_app_mockup.png"></p>
 <p>Consider a practical example of an MVC application: a Phone Book app. In this scenario, the model serves as the structural representation of a phone book record, denoted as <code>PhoneRecord</code>, along with collections of such records. Beyond mere representation, the model encompasses standard methods such as <code>getData</code> and <code>setData</code> to facilitate interaction with this data.</p>
 <p>The view component, on the other hand, assumes the responsibility of presenting this data to the user, typically in formats such as tabular records. It acts as the interface through which users interact with the application's functionalities.</p>
 <p>In the midst of the model and view lies the controller, serving as the intermediary that maps user-generated events, such as mouse clicks or keyboard inputs like hitting the delete button, to corresponding handlers. These handlers, intrinsic to the controller, orchestrate additional operations such as creating new views to solicit user data or extracting data from existing views, culminating in the application of changes to the model.</p>
-<p><img alt="" src="../../images/mvc_flow_diagram.png"></p>
+<p><img alt="" src="images/mvc_flow_diagram.png"></p>
 <h5>Limitations of MVC</h5>
 <p>While MVC remains a cornerstone framework for developing applications of diverse natures, it grapples with a significant limitation: tight coupling between the controller and view. The controller often becomes excessively reliant on the view to execute its logic, leading to the inclusion of non-business-related operations within the controller's handler body.</p>
 <p>Consider an instance within our application where a "Create new record" button triggers an event. The corresponding controller captures this event, initiates a user interface (UI) to collect data, and applies operations to the model upon user confirmation. Here, the controller's dependence on the view becomes evident as it extracts data, such as first name value, from UI components like <code>firstName.getText()</code>. Following data manipulation, the controller again assumes responsibility for updating the view. This intertwining of view-related logic within the controller epitomizes tight coupling.</p>
 <p>To address this issue, it becomes imperative to disentangle view-specific logic from the controller. Tight coupling undermines the modularity and flexibility of the codebase, ultimately impeding scalability and maintainability. By mitigating this dependency, developers can foster cleaner code architecture and enhance the extensibility of the application.</p>
-<p><img alt="" src="../../images/mvc_flow_diagram_illustration.png"></p>
+<p><img alt="" src="images/mvc_flow_diagram_illustration.png"></p>
 <h3>Model View Presenter</h3>
-<p><img alt="" src="../../images/mvp_diagram.png"></p>
+<p><img alt="" src="images/mvp_diagram.png"></p>
 <p>To address the limitations of the MVC pattern, a separation of concerns between the view, model, and controller becomes imperative. Rather than burdening the controller with tasks beyond request handling, such as event capture and view updates, a more refined approach is warranted. Enter MVP (Model-View-Presenter) architecture, which introduces the notion of segregating the presenter component from the view, thereby adding layers of abstraction to interact with the model.</p>
 <p>The concept of MVP architecture was pioneered by Taligent Inc., a subsidiary of IBM, in 1996 [1]. Its fundamental principle revolves around encapsulating data via selections and commands for the model while abstracting the view logic through interactors. In this paradigm, the controller in MVC retains the role of mapping view-generated data to appropriate commands for consumption. This intermediary layer, known as the presenter, assumes a pivotal role in the MVP architecture.</p>
 <p>The presenter in MVP architecture serves atop the view, tasked solely with receiving data from the view and applying business logic by invoking suitable commands or handlers. What distinguishes this approach? Consider the scenario where the view API undergoes modifications in the future. Traditionally, such changes would necessitate adjustments within the controller. However, <mark>by decoupling the view logic from the controller, the presenter remains insulated from underlying alterations, leaving the responsibility of adapting to changes to the view itself. Consequently, modifications are confined to the view layer, sparing the presenter from unnecessary revisions.</mark></p>
 <h5>The Presenter of the View</h5>
-<p><img alt="" src="../../images/mvc_mvp_diff.png"></p>
+<p><img alt="" src="images/mvc_mvp_diff.png"></p>
 <p>A prominent evolution ushered in by MVP architecture is the abstraction of view logic from the controller, achieved through an additional layer of abstraction over the view. Illustrated in our previous example of the phone book application, the view captures events like clicking on the delete button. Upon event capture, the view gathers pertinent data, such as the ID of the record in the currently selected row, formatting it into a JSON object along with other metadata before passing it to the presenter.</p>
 <p>Within the presenter layer, the data is received from the view alongside the interactor object—in our case, the delete button press event. The presenter then leverages this data and interaction event to invoke suitable commands. Upon executing the commands and effecting changes to the model, the model informs the view of the updates, thereby triggering a refresh in the view.</p>
 <p>In the MVP architecture, each view possesses its dedicated presenter, offering a tailored approach to handling user interactions. Furthermore, presenters can be reused across multiple views. <mark>By abstracting away the underlying intricacies of the view API and focusing solely on events and data manipulation, MVP architecture ensures that the business logic remains insulated from any alterations made to the view.</mark></p>
@@ -144,7 +138,7 @@ bg-light
 <p>In the part 1 of the build, we'll focus on the model and address the first three questions.</p>
 <h6><strong>1. What is my data?</strong></h6>
 <p>The response to this inquiry can be quite straightforward. For instance, the data may consist of a list of CSV strings stored in a file, or it could represent a database containing phone records with attributes such as first name, last name, and phone number. To abstract the underlying raw data implemention we will first start by creating a runtime representation of this data. Below is an example of a Model for a phone book application.</p>
-<p><img alt="" src="../../images/model_diagram.png"></p>
+<p><img alt="" src="images/model_diagram.png"></p>
 <p>IModel:</p>
 <div class="code"><pre class="code literal-block"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">IModel</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">PhoneRecord</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">getAllRecords</span><span class="p">();</span>
@@ -420,17 +414,14 @@ bg-light
 <h3>References</h3>
 <p>[1] <a href="https://www.wildcrest.com/Potel/Portfolio/mvp.pdf">MVP: Model-View-Presenter The Taligent Programming Model for C++ and Java</a>, Mike Potel, 1996</p>
     </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/software-development/" rel="tag">software development</a></li>
+    </article>
+</div>
+
+        <ul class="pager postindexpager clearfix">
+<li class="previous"><a href="index-6.html" rel="prev">Newer posts</a></li>
+            <li class="next"><a href="index-4.html" rel="next">Older posts</a></li>
         </ul>
-<ul class="pager hidden-print">
-<li class="previous">
-                <a href="../unix-bsd-minix-linux-what-who-and-when/" rel="prev" title="Unix, BSD, Minix, Linux - What, Who and When">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="../simple-path-to-get-good-in-dsa/" rel="next" title="Simple path to get good in DSA">Next post</a>
-            </li>
-        </ul></nav></aside></article><!--End of body content--><footer id="footer">
+<!--End of body content--><footer id="footer">
             Copyrights © 2024         <a href="mailto:mail.amritpandey@gmail.com">Amrit</a>
             
             
@@ -439,7 +430,7 @@ bg-light
 </div>
 
 
-        <script src="../../assets/js/all-nocdn.js"></script><script>
+        <script src="assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});

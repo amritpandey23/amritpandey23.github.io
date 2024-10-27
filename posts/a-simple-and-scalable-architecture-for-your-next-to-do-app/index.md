@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-I proposed in one of my [LinkedIn posts](https://www.linkedin.com/posts/amritpandey23_if-youre-planning-your-next-personal-crud-activity-7245635838242365440-UMHU?utm_source=share&utm_medium=member_desktop) that personal projects involving CRUD operations have now become somewhat obsolete and don’t teach significant skills. I suggested that if CRUD projects adopt a client-server architecture, it would spice things up and also teach a lot about decoupling and scalable application development. In this post, I am proposing a simple client-server architecture for your personal project.
+_I proposed in one of my [LinkedIn posts](https://www.linkedin.com/posts/amritpandey23_if-youre-planning-your-next-personal-crud-activity-7245635838242365440-UMHU?utm_source=share&utm_medium=member_desktop) that personal projects involving CRUD operations have now become somewhat obsolete and don’t teach significant skills. I suggested that if CRUD projects adopt a client-server architecture, it would spice things up and also teach a lot about decoupling and scalable application development. In this post, I am proposing a simple client-server architecture for your personal project._
 
 ---
 
@@ -22,8 +22,6 @@ This architecture consists of five main components:
 3. **Application Server (Backend)** - [Flask](https://flask.palletsprojects.com/en/3.0.x/) API running on [Gunicorn](https://gunicorn.org/) to handle concurrent requests.
 4. **Database** - [PostgreSQL](https://www.postgresql.org/) for data persistence, backup, and sync.
 5. **Hosting** - This setup is designed to be hosted on cloud virtual instances like AWS [EC2](https://aws.amazon.com/ec2/) or Google Cloud Platform [Compute Engine](https://cloud.google.com/products/compute).
-
----
 
 ## How it Works
 
@@ -58,8 +56,6 @@ This architecture consists of five main components:
 
 - The entire architecture is hosted on cloud platforms like **AWS EC2** or **GCP Compute Engine**, making it highly accessible and scalable. This setup allows you to expand your application as needed, whether that involves adding more frontend or backend instances to handle increased traffic or simply ensuring your app is accessible from any device. However, infrastructure scaling is not part of this architecture.
 
----
-
 ## Why This Architecture Works Well
 
 **1. Separation of Concerns**:
@@ -85,7 +81,5 @@ This architecture consists of five main components:
 
 - If you decide to turn your to-do app into a mobile or desktop app later, you can simply connect to the same backend without making major changes.
 - Additionally, cloud services often come with built-in features like autoscaling, load balancing, and security options to further enhance your app’s performance and reliability at a later stage.
-
----
 
 Whether you're building your first to-do app or a more complex project, this client-server architecture offers a strong foundation. Its modular design allows for easy development and updates, its security features keep your data and server safe, and its cloud-hosted flexibility enables future expansion. With a clear separation of concerns, a scalable backend, and robust data handling, you can confidently build apps that are both simple and powerful.
