@@ -9,9 +9,11 @@
 .. type: text
 -->
 
-I never thought I would face a TV dilemma like Sheldon did in real life! But this dilemma is as real as it gets and is also unavoidable. It's about whether I should go for an Xbox or a PlayStation. And I don't even have a girl friend like Amy who would offer to buy me both :(.
+_I never thought I would face a TV dilemma like Sheldon did in real life! But this dilemma is as real as it gets and is also unavoidable. It's about whether I should go for an Xbox or a PlayStation. And I don't even have a girl friend like Amy who would offer to buy me both :(._
 
 ![Sheldon confused between buying an Xbox One and PS4](/images/sheldon_confused_xbox_ps.webp)
+
+---
 
 ## Why do I want to buy a console?
 
@@ -197,13 +199,12 @@ Availability of games on multiple platforms doesn’t matter to me much.
 
 With our objective evaluation, the final scores are:
 
-```
-Xbox Series X = 8.64
+| Console       | Final Scores |
+| ------------- | ------------ |
+| Xbox Series X | 8.64         |
+| PS5 Slim      | 9.67         |
 
-PS5 Slim = 9.67
-```
-
-So, the PS5 is the winner 🎉.
+PS5 is the winner 🎉.
 
 ![](https://d2xamzlzrdbdbn.cloudfront.net/products/f4d93df2-ee46-4deb-bc04-af77fd4c289f24280610_416x416.jpg)
 
