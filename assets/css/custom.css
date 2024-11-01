@@ -1,49 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@1,7..72,200..900&family=Manrope:wght@200..800&display=swap");
 
+/* Global Font and Body Styles */
+body,
+h1,
 h2,
 h3,
 h4,
-h5 {
-  font-family: "Manrope", sans-serif;
-  font-weight: 600;
-  margin: 3rem 0 1rem 0;
-}
-
-body {
-  background-color: #f8f9fa;
-}
-
+h5,
 .previous > a,
 .next > a,
 table,
 tr {
   font-family: "Manrope", sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  background-color: #f8f9fa;
 }
 
-/* Basic Table Styling */
+body {
+  font-weight: 400;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  margin: 3rem 0 1rem 0;
+}
+
+/* Table Styles */
 table {
   width: 100%;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
+  font-size: 16px;
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Table Headers */
 thead th {
   background-color: #007bff;
   color: #fff;
   padding: 12px;
   text-align: left;
-  font-weight: bold;
 }
 
-/* Table Body Rows */
 tbody tr {
   font-weight: 400;
   border-bottom: 1px solid #ddd;
@@ -57,59 +58,25 @@ tbody tr:hover {
   background-color: #f1f1f1;
 }
 
-/* Table Cells */
 td,
 th {
   padding: 10px;
   text-align: left;
 }
 
-/* Highlight specific cell */
 td.important {
   color: #e53935;
   font-weight: bold;
 }
 
-h1 {
-  font-family: "Manrope", sans-serif;
-  font-weight: 600;
-}
-
-/* .body-content {
-  max-width: 1080px !important;
-  margin: 0 auto;
-} */
-
+/* Text and Typography Styles */
 p,
 li {
-  font-style: normal;
   color: #535353;
+  font-size: 1em;
+  line-height: 1.7;
+  margin-bottom: 16px;
 }
-
-p,
-li:not(.nav-item) {
-  font-size: 20px;
-  font-family: "PT Serif", serif;
-  line-height: 1.8;
-  margin-bottom: 0.6rem;
-}
-
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "PT Serif", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-h4,
-h5,
-h6 {
-  font-weight: 600;
-} */
 
 blockquote {
   border-left: 10px solid #007bff;
@@ -118,8 +85,22 @@ blockquote {
 }
 
 blockquote p {
+  font-family: "PT Serif", serif !important;
+  color: #777;
   font-style: italic;
-  line-height: 1.6;
+  line-height: 1.5;
+  font-size: 0.9em;
+}
+
+em {
+  font-family: "Literata", serif;
+  font-size: 1.2em;
+}
+
+.entry-title {
+  font-family: "Literata", serif;
+  font-optical-sizing: auto;
+  font-style: italic;
 }
 
 hr {
@@ -130,11 +111,7 @@ hr {
   opacity: 0.6;
 }
 
-footer#footer {
-  text-align: center;
-  padding: 2rem 0;
-}
-
+/* Code Block Styling */
 div.code {
   margin: 0;
 }
@@ -146,22 +123,55 @@ div.code > pre {
   font-family: "IBM Plex Mono", monospace;
 }
 
+/* Article Summary */
 .article-summary {
   font-style: italic;
   margin: 0 2rem;
 }
 
+/* Image Styling */
 p > img:only-child {
   display: block;
   margin: 0 auto;
   width: 100%;
   max-width: 720px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  border-radius: 8px; /* Soft rounded corners */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 p > img:hover {
-  transform: scale(1.02); /* Slight zoom on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar List Items */
+.navbar li {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-background {
+  background-color: #e6f2ff;
+}
+
+.social-link {
+  padding: 0.5em;
+  border: 1px solid #535353;
+  border-radius: 1em;
+  color: #535353;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.social-link i {
+  font-size: 1.5em;
+  margin-right: 0.3em;
+}
+
+.social-link:hover {
+  color: #007bff;
+  border-color: #007bff;
+  text-decoration: none;
 }
