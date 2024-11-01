@@ -982,9 +982,7 @@ LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = (
-    'Copyrights &copy; {date}         <a href="mailto:{email}">{author}</a>'
-)
+CONTENT_FOOTER = ""
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -1223,41 +1221,45 @@ INDEX_DISPLAY_POST_COUNT = 1
 # This search form works for any site and looks good in the "site" theme where
 # it appears on the navigation bar:
 #
-# SEARCH_FORM = (
-#     """
-# <!-- DuckDuckGo custom search -->
-# <form method="get" id="search" action="https://duckduckgo.com/"
-#  class="navbar-form pull-left">
-# <input type="hidden" name="sites" value="%s">
-# <input type="hidden" name="k8" value="#444444">
-# <input type="hidden" name="k9" value="#D51920">
-# <input type="hidden" name="kt" value="h">
-# <input class="form-control" type="search" type="text" name="q" maxlength="255" placeholder="Search...">
-# <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
-# </form>
-# <!-- End of custom search -->
-# """
-#     % SITE_URL
-# )
-#
-# If you prefer a Google search form, here's an example that should just work:
 SEARCH_FORM = (
     """
-<!-- Google custom search -->
-<form method="get" action="https://www.google.com/search" class="form-inline ml-auto" role="search">
-  <div class="form-group mr-2">
-    <input type="text" name="q" class="form-control" placeholder="Search">
-  </div>
-  <button type="submit" class="btn btn-primary">
-    <span class="glyphicon glyphicon-search"></span> Search
-  </button>
-  <input type="hidden" name="sitesearch" value="%s">
+<!-- DuckDuckGo custom search -->
+<form method="get" id="search" action="https://duckduckgo.com/"
+ class="form-inline" role="search">
+<input type="hidden" name="sites" value="%s">
+<input type="hidden" name="k8" value="#444444">
+<input type="hidden" name="k9" value="#D51920">
+<input type="hidden" name="kt" value="h">
+<div class="form-group mr-2" style="margin-bottom: 0">
+    <input class="form-control" type="search" type="text" name="q" maxlength="255" placeholder="Search...">
+</div>
+<button type="submit" class="btn btn-primary">
+<i class="fa-solid fa-magnifying-glass"></i>
+</button>
 </form>
 <!-- End of custom search -->
-
 """
     % SITE_URL
 )
+#
+# If you prefer a Google search form, here's an example that should just work:
+# SEARCH_FORM = (
+#     """
+# <!-- Google custom search -->
+# <form method="get" action="https://www.google.com/search" class="form-inline ml-auto" role="search">
+#   <div class="form-group mr-2">
+#     <input type="text" name="q" class="form-control" placeholder="Search">
+#   </div>
+#   <button type="submit" class="btn btn-primary">
+#     <span class="glyphicon glyphicon-search"></span> Search
+#   </button>
+#   <input type="hidden" name="sitesearch" value="%s">
+# </form>
+# <!-- End of custom search -->
+
+# """
+#     % SITE_URL
+# )
 
 # Use content distribution networks for jQuery, twitter-bootstrap css and js,
 # and html5shiv (for older versions of Internet Explorer)
@@ -1276,11 +1278,31 @@ SEARCH_FORM = (
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </head>
 # (translatable)
-# EXTRA_HEAD_DATA = ""
+EXTRA_HEAD_DATA = """
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+"""
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
-# BODY_END = ""
+BODY_END = """
+  <footer class="py-4 footer-background">
+    <div class="container text-center">
+      <p class="mb-2">Connect with me</p>
+      <div class="d-flex justify-content-center mb-3">
+        <a href="https://www.youtube.com/@AmritPandey" target="_blank" class="social-link mx-3" aria-label="YouTube">
+          <i class="fab fa-youtube fa-2x"></i> YouTube
+        </a>
+        <a href="https://www.linkedin.com/in/amritpandey23/" target="_blank" class="social-link mx-3" aria-label="LinkedIn">
+          <i class="fab fa-linkedin fa-2x"></i> Linkedin
+        </a>
+        <a href="https://github.com/amritpandey23" target="_blank" class="social-link mx-3" aria-label="GitHub">
+          <i class="fab fa-github fa-2x"></i> GitHub
+        </a>
+      </div>
+      <p class="small mb-0">Contents &copy; 2024 Amrit Pandey. All rights reserved.</p>
+    </div>
+  </footer>
+"""
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.
