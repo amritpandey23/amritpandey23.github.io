@@ -20,6 +20,10 @@ body {
   font-weight: 400;
 }
 
+.body-content {
+  min-height: calc(100vh - 250px);
+}
+
 h2,
 h3,
 h4,
@@ -149,6 +153,10 @@ p > img:hover {
 .navbar li {
   margin: 0;
   padding: 0;
+}
+
+#footer {
+  display: none;
 }
 
 .footer-background {
