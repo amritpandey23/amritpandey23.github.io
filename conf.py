@@ -142,13 +142,13 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/archive.html", "Archive"),
+        ("/archive.html", "Blogs"),
         ("/pages/about/", "About"),
         (
             (
                 ("/categories/", "Tags"),
                 # ("/pages/goals/", "Goals 2024"),
-                ("/rss.xml", "RSS feed"),
+                # ("/rss.xml", "RSS feed"),
             ),
             "Meta",
         ),
@@ -581,7 +581,7 @@ HIDDEN_AUTHORS = ["Guest"]
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
 # (translatable)
-# INDEX_PATH = ""
+# INDEX_PATH = "about"
 
 # Optional HTML that displayed on “main” blog index.html files.
 # May be used for a greeting. (translatable)
@@ -933,10 +933,10 @@ IMAGE_FOLDERS = {"images": "images"}
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>
-# FAVICONS = (
-#     ("icon", "/favicon.ico", "16x16"),
-#     ("icon", "/icon_128x128.png", "128x128"),
-# )
+FAVICONS = (
+    ("icon", "/images/favicon.ico", "16x16"),
+    ("icon", "/images/android-chrome-192x192.png", "192x192"),
+)
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
 # INDEX_TEASERS = False
