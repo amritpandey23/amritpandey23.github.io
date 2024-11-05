@@ -7,46 +7,70 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://amritpandey23.github.io/categories/career.xml</loc>
-  <lastmod>2024-10-27T10:59:00Z</lastmod>
+  <lastmod>2024-11-05T13:45:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://amritpandey23.github.io/categories/cat_artificial-intelligence.xml</loc>
+  <lastmod>2024-11-05T13:43:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://amritpandey23.github.io/categories/cat_data-structures-algorithms.xml</loc>
+  <lastmod>2024-11-05T13:45:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://amritpandey23.github.io/categories/cat_data-structures-and-algorithms.xml</loc>
+  <lastmod>2024-11-05T13:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/categories/cat_offtopic.xml</loc>
-  <lastmod>2024-10-27T10:59:00Z</lastmod>
+  <lastmod>2024-11-05T13:43:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://amritpandey23.github.io/categories/cat_personal-development.xml</loc>
+  <lastmod>2024-11-05T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/categories/cat_programming.xml</loc>
-  <lastmod>2024-10-27T10:59:00Z</lastmod>
+  <lastmod>2024-11-05T13:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://amritpandey23.github.io/categories/cat_software-engineering.xml</loc>
+  <lastmod>2024-11-05T13:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://amritpandey23.github.io/categories/cat_web-development.xml</loc>
+  <lastmod>2024-11-05T13:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/categories/golang.xml</loc>
-  <lastmod>2024-10-27T10:59:00Z</lastmod>
+  <lastmod>2024-11-05T13:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/categories/javascript.xml</loc>
-  <lastmod>2024-10-27T10:59:00Z</lastmod>
+  <lastmod>2024-11-05T13:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/categories/linux.xml</loc>
-  <lastmod>2024-10-27T10:59:00Z</lastmod>
+  <lastmod>2024-11-05T13:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/categories/programming.xml</loc>
-  <lastmod>2024-10-27T10:59:00Z</lastmod>
+  <lastmod>2024-11-05T13:45:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/categories/software-development.xml</loc>
-  <lastmod>2024-10-27T10:59:00Z</lastmod>
+  <lastmod>2024-11-05T13:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/categories/webdev.xml</loc>
-  <lastmod>2024-10-27T10:59:00Z</lastmod>
+  <lastmod>2024-11-05T13:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/rss.xml</loc>
-  <lastmod>2024-10-27T10:43:00Z</lastmod>
+  <lastmod>2024-11-05T13:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/sitemap.xml</loc>
-  <lastmod>2024-11-01T16:09:00Z</lastmod>
+  <lastmod>2024-11-05T13:46:00Z</lastmod>
  </sitemap>
 </sitemapindex>

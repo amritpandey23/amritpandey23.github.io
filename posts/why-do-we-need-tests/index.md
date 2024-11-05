@@ -3,8 +3,8 @@
 .. slug: why-do-we-need-tests
 .. date: 2019-06
 .. tags: software development, webdev, javascript
-.. category: programming
-.. link: 
+.. category: Software Engineering
+.. link:
 .. description: Running a program without tests is like using a mathematical formula without proof. We “hope” program will work as expected for every input.
 .. type: text
 -->
@@ -41,16 +41,16 @@ npm run test
 
 The final version of testing code is in the `master` branch, however there is a `start` branch which contains boilerplate setup for you to practice. `npm run test` script hot reload mocha as you create new tests.
 
-##  Specification
+## Specification
 
-A specification or spec is an entity that describe what a functionality is expected to do in various cases. Example, Let us say we want to test `Math.max()` function,  we can write a spec in the following manner.
+A specification or spec is an entity that describe what a functionality is expected to do in various cases. Example, Let us say we want to test `Math.max()` function, we can write a spec in the following manner.
 
 ```js
-describe('Math.max', function() {
-    it('finds maximum of two numbers', function(done) {
-        assert(Math.max(1, 10) === 10);
-        done();
-    });
+describe("Math.max", function () {
+  it("finds maximum of two numbers", function (done) {
+    assert(Math.max(1, 10) === 10);
+    done();
+  });
 });
 ```
 
@@ -69,30 +69,29 @@ This snippet is entirely one spec and contain three blocks.
 All the test files are contained in a directory named `test` in root of the project directory. Testing frameworks look for this directory and execute every test file in it. In the cloned repo, open `test/test1.js` file which has following code.
 
 ```js
-const assert = require('assert');
-const _ = require('lodash');
+const assert = require("assert");
+const _ = require("lodash");
 
-describe('Loadash Array Test 1', () => {
-    let testArray = [1, 2, 3, 4, 5];
+describe("Loadash Array Test 1", () => {
+  let testArray = [1, 2, 3, 4, 5];
 
-    it('finds head of the array', (done) => {
-        assert.equal(_.head(testArray), 1);
-        done();
-    });
+  it("finds head of the array", (done) => {
+    assert.equal(_.head(testArray), 1);
+    done();
+  });
 
-    it('slice first 2 elements', (done) => {
-        const slicedArray = _.take(testArray, 2);
-        assert.equal(slicedArray.length, 2);
-        assert(slicedArray.includes(1) && slicedArray.includes(2));
-        done();
-    });
-
+  it("slice first 2 elements", (done) => {
+    const slicedArray = _.take(testArray, 2);
+    assert.equal(slicedArray.length, 2);
+    assert(slicedArray.includes(1) && slicedArray.includes(2));
+    done();
+  });
 });
 ```
 
 This is a very simple test spec, it has one describe block and two test cases. The describe block explains what the spec is about. Describe block also have a variable `testArray` on which tests are performed.
 
-The first case is about testing `_.head` method. As intended, this method should return first element in an array. This return value is then compared with the expected value of `1` in `testArray` variable. 
+The first case is about testing `_.head` method. As intended, this method should return first element in an array. This return value is then compared with the expected value of `1` in `testArray` variable.
 
 An assertion is done with `assert.equal` method. We could also have passed an expression instead of using `.equal` in assertion block.
 
@@ -111,33 +110,33 @@ For example, `it` blocks after performing tests can change the original value of
 We can use a `beforeEach` hook that will reset the value of `testArray` variable before cases are executed. The hooks must be defined in the scope where they are needed. In our case we have defined a hook inside of `describe` block that will run before each `it` block.
 
 ```js
-describe('Lodash String Test 1', () => {
-    let testStr = '';
+describe("Lodash String Test 1", () => {
+  let testStr = "";
 
-    beforeEach(() => {
-        testStr = 'hello    ';
-    });
+  beforeEach(() => {
+    testStr = "hello    ";
+  });
 
-    it('finds last character', (done) => {
-        assert(!_.endsWith(testStr, 'd'));
-        done();
-    });
+  it("finds last character", (done) => {
+    assert(!_.endsWith(testStr, "d"));
+    done();
+  });
 
-    it('finds last character to a position', (done) => {
-        assert(_.endsWith(testStr, 'l', 3));
-        done();
-    });
+  it("finds last character to a position", (done) => {
+    assert(_.endsWith(testStr, "l", 3));
+    done();
+  });
 
-    it('trims the extra space in the end', (done) => {
-        assert.equal(_.trim(testStr), 'hello');
-        done();
-    });
+  it("trims the extra space in the end", (done) => {
+    assert.equal(_.trim(testStr), "hello");
+    done();
+  });
 });
 ```
 
 Hooks take an anonymous function as a parameter. In the above code a simple `beforeEach` is defined inside `describe` that will reset the value of `testStr` to `hello   ` before `it` blocks are executed.
 
-Mocha offers three more hooks, `afterEach`, `after` and `before`. After and before hooks runs only one time in the defined scope. If you want to define a hook that will run before or after entire test procedure, you can put them inside a `helper` file. In the cloned repo you will find a `helper.js` file containing `after` and `before`  hooks.
+Mocha offers three more hooks, `afterEach`, `after` and `before`. After and before hooks runs only one time in the defined scope. If you want to define a hook that will run before or after entire test procedure, you can put them inside a `helper` file. In the cloned repo you will find a `helper.js` file containing `after` and `before` hooks.
 
 ## Nested Describe
 
@@ -173,7 +172,7 @@ describe('Objects Test Specs', () => {
 }
 ```
 
-In the above code, spec *Lodash Object Test 1* is nested inside of *Objects Test Specs*. The `beforeEach` hook applies to each **spec** before execution.
+In the above code, spec _Lodash Object Test 1_ is nested inside of _Objects Test Specs_. The `beforeEach` hook applies to each **spec** before execution.
 
 ## Working with Promises
 
@@ -182,16 +181,16 @@ Mocha execute tests asynchronously, meaning it will not wait for a case to finis
 To work with promises, you can utilize `done` callback. Lets see it with an example.
 
 ```javascript
-const assert = require('assert');
-const wait = require('../src/wait');
+const assert = require("assert");
+const wait = require("../src/wait");
 
-describe('wait Promise', () => {
-    it('returns \'completed\' after 1 sec', (done) => {
-        wait.then(value => {
-            assert(value === 'completed');
-            done(); // testing finish here
-        });
+describe("wait Promise", () => {
+  it("returns 'completed' after 1 sec", (done) => {
+    wait.then((value) => {
+      assert(value === "completed");
+      done(); // testing finish here
     });
+  });
 });
 ```
 
@@ -204,5 +203,6 @@ In above code `wait` promise takes 1 second to return a value. Done is called in
 Something that I did not explained fully is `assert` module, it is available directly via `node`. You can read more about it [here](https://nodejs.org/dist/latest-v10.x/docs/api/assert.html). If you followed this article you have attained the minimum requirement of knowing how to setup and run test in javascript. Setting up tests in a javascript/node project is easy but your tests are only as good as your assertion logic. If you have any suggestion/query please comment down below or DM me on [twitter](https://twitter.com/DiaryOfDev).
 
 Further reading:
+
 - [Mocha](https://mochajs.org/)
-- [Testing on front-end](https://javascript.info/testing-mocha) 
+- [Testing on front-end](https://javascript.info/testing-mocha)
