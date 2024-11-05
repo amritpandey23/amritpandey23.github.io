@@ -3,19 +3,19 @@
 .. slug: some-invaluable-tips-for-programmers
 .. date: 2019-06-26
 .. tags: software development
-.. category: programming
-.. link: 
+.. category: Software Engineering
+.. link:
 .. description: Wisdom is underrated in tech because there is no right way to do a job. Here are tips I collected from some of the veterans programmers of the era.
 .. type: text
 -->
 
-Last week I watched some videos and read article from experts in computer science academia and software industry. I have skimmed some great programming wisdom and aggregated them in this article. 
+Last week I watched some videos and read article from experts in computer science academia and software industry. I have skimmed some great programming wisdom and aggregated them in this article.
 
 ## Program not Code
 
-On a very basic level the terms [coding](https://en.wikipedia.org/wiki/Coding) and [programming](https://en.wikipedia.org/wiki/Computer_programming) can be used interchangeably. But lets just add some philosophy behind their meanings. 
+On a very basic level the terms [coding](https://en.wikipedia.org/wiki/Coding) and [programming](https://en.wikipedia.org/wiki/Computer_programming) can be used interchangeably. But lets just add some philosophy behind their meanings.
 
-When you program, your job is to craftily solve problems, handle errors gracefully, use good component names and document the code. Programming also require programmers to find ways around the limitations of a language or ecosystem and improve them. 
+When you program, your job is to craftily solve problems, handle errors gracefully, use good component names and document the code. Programming also require programmers to find ways around the limitations of a language or ecosystem and improve them.
 
 When you code, you are simply making things work and getting constantly annoyed by the shortcomings of the language constructs. Coding is a job of applying fixes and patches and disregarding the complexity.
 
@@ -53,7 +53,7 @@ Lets get real, we don't like style guides, but they are awesome because they exi
 
 ## Use a suited Programming Language
 
-A programming language comes with its own ecosystem, which means you can include previously written code in your own, incorporate supported tools and get help from community. Any [turing complete](https://en.wikipedia.org/wiki/Turing_completeness) language can solve [solvable](https://en.wikipedia.org/wiki/Halting_problem) computation problems, hence one language can indeed do the job of other. So, it is not a question of *what a language can or cannot do, but how hard it can be to implement for a certain job*? For example, when it comes to rapid debugging and human-friendly syntax, python wins but at the same time it is not suitable for game programming. Similarly C++ is a powerful OOP language for writing games but hard to use for front end web apps.
+A programming language comes with its own ecosystem, which means you can include previously written code in your own, incorporate supported tools and get help from community. Any [turing complete](https://en.wikipedia.org/wiki/Turing_completeness) language can solve [solvable](https://en.wikipedia.org/wiki/Halting_problem) computation problems, hence one language can indeed do the job of other. So, it is not a question of _what a language can or cannot do, but how hard it can be to implement for a certain job_? For example, when it comes to rapid debugging and human-friendly syntax, python wins but at the same time it is not suitable for game programming. Similarly C++ is a powerful OOP language for writing games but hard to use for front end web apps.
 
 ## Orders of Ignorance
 
@@ -75,7 +75,7 @@ Once we know our orders of ignorance it becomes easy to work on them. For exampl
 
 ## Conclusion
 
-This month I started to learn programming(again) by solving Brian Kernighan's C Programming Book, and I have found some alarming deficiency in my programming skills. I have been coding for past two and a half year. I have had always felt that something was missing in way I program. When my code fail I always look for "help" instead of a "solution". At first I used to think maybe I was lacking proper planning skills, but after through introspection I found that the problems were in my habits. I have learnt a lot by these tips. I hope it would be of help to you some day. 
+This month I started to learn programming(again) by solving Brian Kernighan's C Programming Book, and I have found some alarming deficiency in my programming skills. I have been coding for past two and a half year. I have had always felt that something was missing in way I program. When my code fail I always look for "help" instead of a "solution". At first I used to think maybe I was lacking proper planning skills, but after through introspection I found that the problems were in my habits. I have learnt a lot by these tips. I hope it would be of help to you some day.
 
 ## References
 

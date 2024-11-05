@@ -3,7 +3,7 @@
 .. slug: garbage-collector-then-a-boon-now-a-curse
 .. date: 2024-05-18 18:14:09 UTC+05:30
 .. tags: programming
-.. category: programming
+.. category: Software Engineering
 .. link:
 .. description: Garbage Collectors solved crucial memory management issues by preventing leaks, but they add runtime overhead, reducing overall performance. With languages like Rust that omits GC for more efficient memory management, it's worth questioning whether new programming languages still need garbage collectors.
 .. type: text

@@ -3,7 +3,7 @@
 .. slug: a-simple-and-scalable-architecture-for-your-next-to-do-app
 .. date: 2024-09-29 13:02:12 UTC+05:30
 .. tags: webdev
-.. category: programming
+.. category: Web Development
 .. link:
 .. description:
 .. type: text

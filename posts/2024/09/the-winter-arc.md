@@ -3,7 +3,7 @@
 .. slug: the-winter-arc
 .. date: 2024-09-27 21:22:34 UTC+05:30
 .. tags: career
-.. category: offtopic
+.. category: Personal Development
 .. link:
 .. description:
 .. type: text

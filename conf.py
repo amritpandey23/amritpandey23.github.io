@@ -147,6 +147,7 @@ NAVIGATION_LINKS = {
         (
             (
                 ("/categories/", "Tags"),
+                ("/pages/knowledge-base/", "Knowledge Base"),
                 # ("/pages/goals/", "Goals 2024"),
                 # ("/rss.xml", "RSS feed"),
             ),

@@ -3,8 +3,8 @@
 .. slug: what-go-programming-language-does-and-does-not-have
 .. date: 2019-05-18
 .. tags: golang, webdev
-.. category: programming
-.. link: 
+.. category: Software Engineering
+.. link:
 .. description: Go has the benefit of hindsight, and basics are well done it has a garbage collection, a package system, first ...
 .. type: markdown
 -->
@@ -18,6 +18,7 @@
 We will now try to understand each term in brief. As a beginner in core programming, having knowledge of these terms are important. The meaning of all these concepts apply in every programming language. These terms can help you distinguish various languages on a fundamental level.
 
 ## ✅ Things that Go has
+
 ### Garbage Collection
 
 It is an entity in any programming language that does automatic memory management. To understand garbage collection or memory management, first you need to understand how memory works. While working with a programming language, compiler assign various memory location in the system to store data e.g. creating a variable, looping over an array etc. The allocation and de-allocation of memory needs to be done in order to make program more efficient with memory.
@@ -35,11 +36,11 @@ A First class function is a function that can be treated like any other variable
 ```go
 package main
 
-import (  
+import (
     "fmt"
 )
 
-func main() {  
+func main() {
     a := func() {
         fmt.Println("hello world first class function")
     }
@@ -69,7 +70,7 @@ func main() {
 
     fmt.Println(v)
     // “undefined: v” compilation error
-    
+
 }
 ```
 
@@ -93,7 +94,7 @@ In programming type conversion refers to changing of data type of an entity to a
 a := 1.0 // same as float64(1.0)
 b := 1 // same as int(1)
 
-fmt.Printf("%f", a*b) 
+fmt.Printf("%f", a*b)
 // invalid operation: a * b (mismatched types float64 and int)
 ```
 
@@ -152,7 +153,7 @@ class MyContainer
     // Container that deals with an arbitrary type T
 };
 
-void main() 
+void main()
 {
     // Make MyContainer take just ints.
     MyContainer<int> intContainer;
@@ -192,6 +193,7 @@ foo('Hello ', , 'World!')  // prints Hello World!
 In above code, the parameters `a`, `b` and `c` are all annotated with some metadata. `a` and `c` are annotated with `int` and `float` types whereas `b` is provided with a string description. foo will print specific output despite the type of arguments mentioned in annotations.
 
 ### Thread-local Storage
+
 Thread-local storage is a computer programming method that uses static or global memory local to a thread. It is a static area where data gets copied for each thread in a program. When multiple thread utilize same static data for same task, they can copy it from TLS rather than storing it on their own.
 
 ## Conclusion

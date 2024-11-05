@@ -3,8 +3,8 @@
 .. slug: model-view-presenter-mvp-architecture
 .. date: 2024-02-04 23:01:29 UTC+05:30
 .. tags: software development
-.. category: 
-.. link: 
+.. category: Software Engineering
+.. link:
 .. description: MVP architecture was first proposed by Taligent Inc. a subsidiary of IBM in 1996 as a success to popular MVC architecture for building modern apps.
 .. type: text
 -->
@@ -15,7 +15,7 @@ Some examples and concepts are directly derived from the 1996 paper[1] published
 
 ![](/images/mvp_diagram.png)
 
-*Fig.1: Model View Presenter*
+_Fig.1: Model View Presenter_
 
 ## Model View Controller
 
@@ -104,12 +104,13 @@ The response to this inquiry can be quite straightforward. For instance, the dat
 ![](/images/model_diagram.png)
 
 IModel:
+
 ```java
 public interface IModel {
 	public List<PhoneRecord> getAllRecords();
 
 	public PhoneRecord getRecordWithId(String id);
-	
+
 	public boolean createRecord(PhoneRecord record);
 
 	public boolean updateRecordWithId(String id, PhoneRecord update);
@@ -119,6 +120,7 @@ public interface IModel {
 ```
 
 PhoneRecord:
+
 ```java
 public class PhoneRecord {
 	private String id;
@@ -153,6 +155,7 @@ Additionally, the model is where we can implement data persistence. However, for
 Now, the question arises: how do we define the data specification? This question guides us in determining how operations are applied to the dataset. For instance, users might want to delete multiple phone records at once. To accommodate this functionality, we abstract the logic of grouping multiple data records from the model. In our example, we support both single and multiple selections of data from our phone book records.
 
 ISelection:
+
 ```java
 public interface ISelection {
 	public List<PhoneRecord> getSelections(IModel model);
@@ -160,6 +163,7 @@ public interface ISelection {
 ```
 
 MultiPhoneRecordSelection:
+
 ```java
 public class MultiPhoneRecordSelection implements ISelection {
 	private final List<String> idList;
@@ -184,10 +188,11 @@ public class MultiPhoneRecordSelection implements ISelection {
 ```
 
 SinglePhoneRecordSelection:
+
 ```java
 public class SinglePhoneRecordSelection implements ISelection {
 	private String id;
-	
+
 	public SinglePhoneRecordSelection(String id) {
 		this.id = id;
 	}
@@ -211,6 +216,7 @@ public class SinglePhoneRecordSelection implements ISelection {
 By addressing this question, we can develop top-level APIs for our model. To interact with our model, we require commands that execute specific actions. These commands are abstracted in the ICommand component of the MVP architecture. They take the specific selection provided by the user and enact changes within the model. For our use cases, let's introduce two commands: NewCommand, responsible for creating a new record in the model, and DeleteCommand, which handles the deletion of records from the model.
 
 ICommand:
+
 ```java
 public interface ICommand {
 	public void execute(ISelection selection, IModel model);
@@ -218,6 +224,7 @@ public interface ICommand {
 ```
 
 NewCommand:
+
 ```java
 public class NewCommand implements ICommand {
 	private PhoneRecord pr;
@@ -235,6 +242,7 @@ public class NewCommand implements ICommand {
 ```
 
 DeleteCommand:
+
 ```java
 public class DeleteCommand implements ICommand {
 
@@ -265,6 +273,7 @@ By delving with the questions in Part 1 we have solved the modelling problem. No
 For demonstration purposes, we will develop a straightforward command-line application to showcase our data. This view will offer users two options: "New" and "Delete" for respective actions. The presenter, seamlessly integrated within the view, will oversee the execution of business logic.
 
 IView:
+
 ```java
 public interface IView {
 	public void displayRecords(List<PhoneRecord> records);
@@ -276,6 +285,7 @@ public interface IView {
 ```
 
 PhoneBookView:
+
 ```java
 public class PhoneBookView implements IView {
 	private IPresenter presenter;
@@ -331,9 +341,10 @@ public class PhoneBookView implements IView {
 
 ##### **5. What are my events?**
 
-Events are user generated entities like button pressed, mouse click, key press etc. Interactors primarily feature in UI-rich applications, where users engage with various event generation capabilities. These interactors are captured by the view. Since we're employing a command-line interface, user requests are manually entered, thus obviating the need for an in-depth discussion of interactors. Here, we'll establish a placeholder for explanatory purposes. 
+Events are user generated entities like button pressed, mouse click, key press etc. Interactors primarily feature in UI-rich applications, where users engage with various event generation capabilities. These interactors are captured by the view. Since we're employing a command-line interface, user requests are manually entered, thus obviating the need for an in-depth discussion of interactors. Here, we'll establish a placeholder for explanatory purposes.
 
 IInteractor:
+
 ```java
 public interface IInteractor {
     // Methods for handling user events
@@ -342,9 +353,10 @@ public interface IInteractor {
 
 ##### **6. How do I stitch this all together**
 
-Finally, we the most crucial question of gathering all the parts together and work towards bringing our application to life. Below is the code that shows how the presenter only works on the data generated by the view and calls appropriate commands. 
+Finally, we the most crucial question of gathering all the parts together and work towards bringing our application to life. Below is the code that shows how the presenter only works on the data generated by the view and calls appropriate commands.
 
 IPresenter:
+
 ```java
 public interface IPresenter {
 	public void onViewAttached(IView view);
@@ -358,6 +370,7 @@ public interface IPresenter {
 ```
 
 PhoneBookPresenter:
+
 ```java
 public class PhoneBookPresenter implements IPresenter {
 	private IView view;

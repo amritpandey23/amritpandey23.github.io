@@ -3,9 +3,9 @@
 .. slug: simple-path-to-get-good-in-dsa
 .. date: 2024-03-02 16:54:23 UTC+05:30
 .. tags: programming, career
-.. category: 
-.. link: 
-.. description: Simple path to get good at solving Data Structure and Algorithm problems. 
+.. category: Data Structures Algorithms
+.. link:
+.. description: Simple path to get good at solving Data Structure and Algorithm problems.
 .. type: text
 -->
 
@@ -24,6 +24,7 @@ Start by comprehensively understanding and committing to memory all essential al
 Acquiring a deep understanding of each topic is paramount. Without ingraining these algorithms into memory, solving problems becomes significantly more challenging. It's akin to knowing what needs to be done but struggling to articulate it. Therefore, prioritize memorizing algorithms for each topic. Here's a breakdown of algorithms for each category:
 
 **Math:**
+
 - LCM
 - GCD
 - Is Prime
@@ -37,6 +38,7 @@ Acquiring a deep understanding of each topic is paramount. Without ingraining th
 - Combination
 
 **Array:**
+
 - Linear Search
 - Binary Search
 - Bubble Sort
@@ -54,6 +56,7 @@ Acquiring a deep understanding of each topic is paramount. Without ingraining th
 - Three Pointer
 
 **String:**
+
 - All String manipulation methods in programming language of choice.
 - Rabin-Karp
 - KMP
@@ -63,14 +66,17 @@ Acquiring a deep understanding of each topic is paramount. Without ingraining th
 - Longest Common Subsequence
 
 **Hashing:**
+
 - Hashset
 - Hashmaps
 - Using arrays as maps
 
 **Stacks & Queues:**
+
 - Know-How
 
 **Graph:**
+
 - BFS
 - DFS
 - Dijkstra's Algorithm
@@ -88,9 +94,11 @@ Acquiring a deep understanding of each topic is paramount. Without ingraining th
 - Minimum Cut
 
 **Linked List, Binary Tree, Binary Search Tree, AVL Tree, RB Tree:**
+
 - Know-How
 
 **Dynamic Programming(Classical problems):**
+
 - Fibonacci Series
 - Longest Common Subsequence
 - Longest Incresing Subsequence
@@ -105,7 +113,7 @@ Acquiring a deep understanding of each topic is paramount. Without ingraining th
 - Rod Cutting Problem
 - Coin Row Problem
 
-The list is not complete but you can get exhaustive list of algorithms anywhere on the internet. 
+The list is not complete but you can get exhaustive list of algorithms anywhere on the internet.
 
 ### Part 2: Intuition
 
@@ -118,4 +126,3 @@ Only tackle problems related to each level after memorizing all relevant algorit
 By adopting this comprehensive approach, you'll not only master DSA but also develop robust problem-solving skills essential for real-world applications. Remember, it's a journey of continual learning and refinement rather than a race to accumulate problem-solving streaks.
 
 That is all one has to do to get good at DSA. Nothing more and nothing less. Getting good at DSA is not essential for doing your job i.e. software engineering but it is a benchmark over which you will be hired and you will hire others. In the beginning of our job we will find ourselves solving DSA problems for getting one and in the latter we will asking DSA questions for giving one.
-
