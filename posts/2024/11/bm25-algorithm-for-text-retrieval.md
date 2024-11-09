@@ -2,10 +2,10 @@
 .. title: BM25 Algorithm for text retrieval
 .. slug: bm25-algorithm-for-text-retrieval
 .. date: 2024-11-09 16:18:16 UTC+05:30
-.. tags:
-.. category:
+.. tags: ml
+.. category: Artificial Intelligence
 .. link:
-.. description:
+.. description: BM25 algorithm is one of the most powerful algorithm in text search and retrieval that was created in 1994 but is still used today.
 .. type: text
 -->
 
