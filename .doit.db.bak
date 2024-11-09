@@ -274,3 +274,5 @@
 'copy_files:output\\images\\bm25-1.png', (1584128, 260)
 'copy_files:output\\images\\bm25-2.png', (1584640, 261)
 'copy_files:output\\images\\bm25-3.png', (1585152, 261)
+'render_taxonomies:output\\categories\\ml\\index.html', (1588736, 2326)
+'render_taxonomies:output\\categories\\ml.xml', (1591296, 665)
