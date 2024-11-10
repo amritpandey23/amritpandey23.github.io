@@ -1,122 +1,135 @@
 <!--
-.. title: Learnings from Embeddings and Retrieval Augmentated Generation
-.. slug: learnings-from-embeddings-and-retrieval-augmentated-generation
-.. date: 2024-11-30 12:53:55 UTC+05:30
-.. tags:genai
+.. title: Insights from Building an Embeddings and Retrieval-Augmented Generation App
+.. slug: insights-from-embeddings-and-retrieval-augmented-generation
+.. date: 2024-11-10
+.. tags: genai
 .. category: Artificial Intelligence
 .. link:
-.. description: Here is the summary of insights I've gained after building a practical text search app using vector embedding and RAG without using frameworks or external APIs.
+.. description: Key insights from creating a practical text search app with vector embeddings and RAG, without frameworks or external APIs.
 .. type: text
 -->
 
-_In this post, I’ll share insights and key findings from building a practical text search application without relying on frameworks like LangChain or external third-party APIs. I’ve also extended the app’s functionality to support Retrieval-Augmented Generation (RAG) capabilities using the Gemini Flash 15B model._
+_In this post, I’ll share key insights and findings from building a practical text search application without using frameworks like LangChain or external APIs. I've also extended the app’s functionality to support Retrieval-Augmented Generation (RAG) capabilities using the Gemini Flash 1.5B model._
 
 ---
 
-## What is Text Retrieval?
+## Understanding Text Retrieval 📚
 
-Text retrieval is the science of extracting relevant information from a dataset in response to a query. This challenge has a long history, predating modern information systems. Before digital systems, relevant data was retrieved by manually annotating documents with titles, summaries, and keywords.
+Text retrieval is the science of extracting relevant information from a dataset in response to a query. This challenge predates modern digital systems—historically, information was retrieved through manually annotated documents.
 
-After World War II, with the need to index large volumes of scientific publications, early solutions to text retrieval, or "ad-hoc retrieval," led to what we now call "search engines." Unlike today’s web-based search engines, early search systems were designed to solve retrieval problems for specific datasets using metadata, like human annotations.
+After World War II, early text retrieval solutions addressed the growing need to index large scientific publications. These systems evolved into what we now know as "search engines." Early systems relied on metadata, like human annotations, to solve specific retrieval problems, distinct from today’s web-based search engines.
 
-It wasn’t until about a decade after the war that researchers developed methods for automated text retrieval, such as term-frequency and inverse-document-frequency (TF-IDF) algorithms. These algorithms match the frequency of terms in the query and corpus. This approach remains relevant, with the `BM25` algorithm as a widely used method in text retrieval today.
+In the following decades, methods for automated text retrieval emerged, such as term-frequency and inverse-document-frequency (TF-IDF) algorithms, which match the frequency of terms in the query and corpus. Today, a variant known as `BM25` remains widely used in text retrieval.
 
-## Vectors and Embeddings
+## Vectors and Embeddings ⚛️
 
-A vector is a mathematical representation, essentially a set of numbers. For example:
+A vector is a mathematical representation, essentially a set of numbers, such as `[1, 2, 3]`. Assigning meaning to these numbers makes them useful. For example, in X, Y, Z dimensions, `[1, 2, 3]` might represent an object’s location in 3D space.
 
-`[1, 2, 3]`
+In text retrieval and natural language processing (NLP), vectors represent data numerically, enabling computers to semantically compare sentence meanings. Machine learning models trained on large datasets can convert text into numerical vectors, known as _embeddings_.
 
-If we assign meaning to these numbers, they become useful. Say we represent the world in X, Y, and Z dimensions; then, `[1, 2, 3]` could indicate an object's location in this 3D space relative to a reference point.
+For instance, the sentence "_Hello, My Name is Amrit_" could be represented as an embedding vector like `[-0.23, 0.78, 1.22, -0.034 ...]`. Below, you’ll see an example of a text embedding vector of size 512:
 
-In computer science, vectors often represent data numerically. For instance, a text string can be represented as a vector of 250 numbers. In text retrieval and natural language processing (NLP), vectors allow us to semantically compare meanings across sentences. Converting text into numbers enables computers to process language more efficiently.
+![](/images/insomnia_output.png)
 
-Machine learning models trained on large datasets can convert text into these numerical representations, called _embeddings_. An embedding is essentially a vector produced when text data is transformed into a numerical format by a trained model.
+## What is Retrieval-Augmented Generation (RAG)? 🖨️
 
-## What is Retrieval-Augmented Generation (RAG)?
+![](/images/rag_diagram.jpg)
 
-Retrieval-Augmented Generation (RAG) combines three key elements to solve the problem of generating relevant responses using Large Language Models (LLMs).
+Retrieval-Augmented Generation (RAG) uses three key elements to generate relevant responses with Large Language Models (LLMs) -- _Information Retrieval_, _Knowledge-Augmentation_ and _Text Generation_.
 
-Let’s break down each component:
+Here’s a breakdown of each component:
 
-### Retrieval
+#### Information Retrieval
 
-As discussed in the [section above](#what-is-text-retrieval), retrieval involves extracting relevant information from a corpus. This is essential, as irrelevant data can lead to RAG failing in its objective.
+As discussed in the [text retrieval section](#understanding-text-retrieval), this involves extracting relevant information from a corpus. Our application is designed to retrieve accurate, relevant data to prevent RAG from returning irrelevant results.
 
-In our application, data retrieval is designed to prioritize accuracy and relevance.
+The IR systems can use algorithms that depends on exact query matching in order to retrieve relevant text data. There are many ranking and relevance algorithms which performs to fetch relevant data from the information system. The query and ranking algorithms are then combined with similarity matching algorithms from the realm of Natural Language Processing (NLP) in order to furture tune the search results.
 
-### Augmentation
+#### Knowledge Augmentation
 
-Augmentation involves providing the model with context or information in the prompt to enhance its responses. A technique known as "Knowledge Augmentation" allows us to supplement LLMs with information they might lack. However, each LLM has a limit on the amount of context it can accept, known as the token limit. Therefore, the retrieval system must fetch not only accurate but also concise information from the knowledge base.
+Augmentation provides the model with context or additional information to improve responses. Known as "Knowledge Augmentation," this technique supplements LLMs with information they may lack. However, each LLM has a token limit, so our retrieval system must fetch concise, relevant information so that the text-generation process may provide user with accurate response.
 
-### Generation
+#### Text Generation
 
-Once retrieval and augmentation are complete, the LLM generates a response based on the relevant, augmented data provided in the prompt.
+Once retrieval and augmentation are complete, the LLM generates a response based on the relevant, augmented data.
 
-By now, readers should have a clearer understanding of RAG. RAG is crucial for generating responses on topics an LLM lacks knowledge in, serving as an alternative to fine-tuning, which can be time-consuming and costly.
+RAG is critical for generating responses on topics an LLM isn’t familiar with, serving as an alternative to fine-tuning, which can be time-consuming and costly.
 
-## My Text Embedding and RAP Application
+## Building My Text Embedding and RAG Application 🚀
 
-It's a common adage in engineering that one should never reinvent the wheel. I don’t subscribe to this. If we don’t understand how the wheel was originally invented, how can we hope to design something as complex as a car and we probably can never invent something like a car without wheels. Building from scratch is essential for understanding the challenges faced by existing systems, as it fosters insights and innovative solutions.
+There's a common adage in engineering: _never reinvent the wheel_. I don’t fully subscribe to this. If we don’t understand how the wheel was originally invented, how can we hope to design something as complex as a car? Building from scratch is essential for understanding and innovation.
 
-For this project, there are several frameworks that offer out-of-the-box utilities. The most popular is LangChain, which provides essential tools and utilities for building LLM applications. Additionally, free services like Cohere's search library and OpenAI’s text embedding model handle some of the core tasks I need. However, using them would only teach me how to work with their APIs, not the fundamental principles behind them.
-
-### The story
-
-To start, I designed a vector database from scratch. The design documents and diagrams are available in the GitHub repository. I used SQLite with the SQLite-Vec extension to transform it into a vector database.
-
-I abstracted database operations using Python by creating wrappers around the SQLite database. This was crucial to encapsulate lower-level details and keep the implementation clean and manageable.
-
-For text embeddings, I initially used TensorFlow’s open-source Wiki-Words model, which is trained on Wikipedia data. Later, I switched to Google’s Universal Sentence Encoder, which generates embeddings of size 512 (compared to 250 with Wiki-Words) and offers greater accuracy.
-
-For the LLM, I used the Gemini Flash 1.5B model, my only external service dependency for generating responses. I am also exploring on-device models for LLM tasks, as this is a field I’m keen to dive deeper into.
-
-For the frontend, I built a React application that communicates with the backend server using CORS. The UI is simple and sleek, with customizable client-side settings.
-
-Overall, building this app was incredibly rewarding, giving me hands-on experience with core concepts like vector databases, embeddings, and model integration. I learned a lot along the way, and it’s been a valuable experience in practical engineering.
+For this project, several frameworks could have provided out-of-the-box utilities, such as LangChain, Cohere's semantic search library, or OpenAI’s text embedding model. However, using these would have only taught me to work with their APIs, not the underlying principles.
 
 ![](/images/learnings_from_text_embeddings_RAG.jpg)
 
-#### Searching
+I started by designing a vector database from scratch, using **SQLite** with the `sqlite-vec` extension to convert it into a vector database. I created wrappers around SQLite to abstract low-level operations, keeping the implementation clean and manageable.
 
-The search functionality works as follows:
+For text embeddings, I initially used **TensorFlow’s Wiki-Words** model but later switched to **Google’s Universal Sentence Encoder**, which generates embeddings of size **512**, offering improved accuracy.
 
-1. The user's query is converted into an embedding, and the system retrieves the nearest neighbors of this embedding from the stored text embeddings in the vector database.
+The LLM, **Gemini Flash 1.5B**, is my only external dependency for generating responses. I’m exploring on-device models as this is a field I’d like to delve deeper into.
+
+All these are tied well together with a simple **Flask** application as a backend server.
+
+The front-end is a **React** application that communicates with the backend via CORS, with a sleek, simple UI and customizable client-side settings.
+
+This is a common **light-weight architecture** I follow for creating all of my personal apps, you can read more about the architecture [here](https://amritpandey23.github.io/posts/2024/09/a-simple-and-scalable-architecture-for-your-next-to-do-app/).
+
+#### Search Functionality
+
+The search process works as follows:
+
+1. The user’s query is converted into an embedding, and the system retrieves the nearest neighbors from the vector database.
 2. The results are displayed in ascending order of distance from the query embedding, showing the closest matches first.
-
-<!-- ![](/images/search.png) -->
 
 ![](/images/search_results.png)
 
-#### Asking (RAG)
+#### RAG for Question-Answering
 
-The process for asking questions and generating responses is as follows:
+For question-answering:
 
-1. The user submits a question, which is converted into an embedding. Similar to the search process, the system retrieves a list of nearest embeddings from the vector database.
-2. The retrieved search results are provided to the LLM in a knowledge-augmented prompt to generate a response.
-3. The LLM generates a response based on the provided context.
+1. The user’s question is converted into an embedding, and the system retrieves relevant embeddings from the vector database.
+2. The LLM then generates a response based on this context.
 
 ![](/images/ask_results.png)
 
 #### Data Operations
 
-To expand the data available for search and response generation, the Data Operations page allows users to add new data to the database.
-
-1. The user enters text data, which is then converted into embeddings and stored in the vector database.
+The Data Operations page allows users to add new data to the database, expanding available data for search and responses. Users enter text data, which is converted into embeddings and stored in the vector database.
 
 ![](/images/data_operations.png)
 
-### Backend Server Application
+### Key Technical Details 🤓
 
-![](/images/insomnia_output.png)
+This section dives into some technical aspects of the app, presented in a Q&A format for those interested in the finer points.
 
-![](/images/insomnia_output_2.png)
+#### How Do Vector Databases Differ from Traditional Databases?
 
-### Vector Database internals
+Traditional databases store structured data in various formats. Vector databases, by contrast, are specialized for storing multi-dimensional vectors. They don’t differentiate between data types like images, text, or audio, as all unstructured data is stored in vectors.
+
+Vector databases support operations like cosine similarity, distance, and dot product, unlike CRUD operations typical in traditional databases.
+
+The `text-embeddings` table below shows how the database stores text embeddings, each associated with a row ID for retrieval. The database also includes `chunks` and `rowId` tables for breaking down large texts, though chunking isn’t implemented in this app.
 
 ![](/images/vector_database_structure.png)
 
-### Text Retrieval algorithm: K-Nearest-Neighbor
+#### Can Embeddings Be Converted Back to Text?
+
+Embeddings don’t store word-to-number mappings, making it impossible to retrieve exact text from them. Techniques like similarity search (used in this app) can retrieve text with similar meanings, but converting embeddings back to the original text is mathematically impossible and computationally challenging.
+
+#### How Does Text Length Affect Embeddings?
+
+Embedding length is designed to capture a text’s meaning. Shorter texts provide more focused embeddings, while longer texts can lose detail as the model compresses information.
+
+To address this, _chunking_ breaks down longer texts into smaller, meaningful pieces, storing embeddings for each chunk. This improves search accuracy and can add metadata for better context.
+
+I learned about this technique but didn't implemented it yet, something to look for in the future😉.
+
+![](/images/chunking_diagram.jpg)
+
+#### How Does the Search Work?
+
+The app uses a K-Nearest Neighbor (KNN) algorithm from `sqlite-vec` to find the closest matches for a query embedding. Here’s a simplified SQL example:
 
 ```sql
 SELECT
@@ -134,4 +147,21 @@ ORDER BY
     distance
 ```
 
-## Source Code
+The KNN algorithm calculates the distance between vectors in a multi-dimensional space (512 in this case) to find the nearest matches. Other algorithms, like cosine similarity, are also common for comparing text similarity in information retrieval. Given below you can see the search performed on the existing corpora of text shown in ascending order of the distance from the query text.
+
+![](/images/insomnia_output_2.png)
+
+#### How Does the Prompt Look?
+
+The prompt used in the app to generate responses is available on [Google AI Studio](https://aistudio.google.com/app/prompts).
+
+## Source Code ⭐
+
+The full source code, including front-end and back-end, is available on GitHub: [Sanjaya](https://github.com/amritpandey23/Sanjaya).
+
+The embedding models used include:
+
+- [Google Universal Sentence Encoder on Kaggle](https://www.kaggle.com/models/google/universal-sentence-encoder)
+- [Google Wiki-Words model on Kaggle](https://www.kaggle.com/models/google/wiki-words)
+
+For instructions on setting up a vector database with SQLite, see the [sqlite-vec extension](https://github.com/asg017/sqlite-vec). The LLM model Gemini is available on [Google AI Studio](https://aistudio.google.com/prompts/new_chat).
