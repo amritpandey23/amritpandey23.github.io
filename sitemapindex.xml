@@ -11,7 +11,7 @@
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/categories/cat_artificial-intelligence.xml</loc>
-  <lastmod>2024-11-09T11:35:00Z</lastmod>
+  <lastmod>2024-11-10T07:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/categories/cat_data-structures-algorithms.xml</loc>
@@ -28,6 +28,10 @@
  <sitemap>
   <loc>https://amritpandey23.github.io/categories/cat_web-development.xml</loc>
   <lastmod>2024-11-05T13:43:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://amritpandey23.github.io/categories/genai.xml</loc>
+  <lastmod>2024-11-10T07:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/categories/golang.xml</loc>
@@ -59,10 +63,10 @@
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/rss.xml</loc>
-  <lastmod>2024-11-09T11:35:00Z</lastmod>
+  <lastmod>2024-11-10T07:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://amritpandey23.github.io/sitemap.xml</loc>
-  <lastmod>2024-11-09T11:35:00Z</lastmod>
+  <lastmod>2024-11-10T07:09:00Z</lastmod>
  </sitemap>
 </sitemapindex>

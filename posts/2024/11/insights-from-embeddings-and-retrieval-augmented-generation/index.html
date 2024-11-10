@@ -3,19 +3,26 @@
 " lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="Blog site of Amrit">
+<meta name="description" content="Key insights from creating a practical text search app with vector embeddings and RAG, without frameworks or external APIs.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Amrit's Blog</title>
-<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<title>Insights from Building an Embeddings and Retrieval-Augmented Generation App | Amrit's Blog</title>
+<link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
-<link rel="canonical" href="https://amritpandey23.github.io/">
-<link rel="icon" href="images/favicon.ico" sizes="16x16">
-<link rel="icon" href="images/android-chrome-192x192.png" sizes="192x192">
-<link rel="next" href="index-11.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<link rel="prefetch" href="posts/2024/11/insights-from-embeddings-and-retrieval-augmented-generation/" type="text/html">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../rss.xml">
+<link rel="canonical" href="https://amritpandey23.github.io/posts/2024/11/insights-from-embeddings-and-retrieval-augmented-generation/">
+<link rel="icon" href="../../../../images/favicon.ico" sizes="16x16">
+<link rel="icon" href="../../../../images/android-chrome-192x192.png" sizes="192x192">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<meta name="author" content="Amrit">
+<link rel="prev" href="../bm25-algorithm-for-text-retrieval/" title="BM25 Algorithm for text retrieval" type="text/html">
+<meta property="og:site_name" content="Amrit's Blog">
+<meta property="og:title" content="Insights from Building an Embeddings and Retrieval-Augmented Generatio">
+<meta property="og:url" content="https://amritpandey23.github.io/posts/2024/11/insights-from-embeddings-and-retrieval-augmented-generation/">
+<meta property="og:description" content="Key insights from creating a practical text search app with vector embeddings and RAG, without frameworks or external APIs.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2024-11-10T00:00:00+05:30">
+<meta property="article:tag" content="genai">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -27,7 +34,7 @@ navbar-light
 bg-light
 "><div class="container">
 <!-- This keeps the margins nice -->
-        <a class="navbar-brand" href=".">
+        <a class="navbar-brand" href="../../../../">
 
             <span id="blog-title">Amrit's Blog</span>
         </a>
@@ -38,16 +45,16 @@ bg-light
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item">
-<a href="archive.html" class="nav-link">Blogs</a>
+<a href="../../../../archive.html" class="nav-link">Blogs</a>
                 </li>
 <li class="nav-item">
-<a href="pages/about/" class="nav-link">About</a>
+<a href="../../../../pages/about/" class="nav-link">About</a>
             </li>
 <li class="nav-item dropdown">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Meta</a>
             <div class="dropdown-menu">
-                    <a href="categories/" class="dropdown-item">Tags</a>
-                    <a href="pages/knowledge-base/" class="dropdown-item">Knowledge Base</a>
+                    <a href="../../../../categories/" class="dropdown-item">Tags</a>
+                    <a href="../../../../pages/knowledge-base/" class="dropdown-item">Knowledge Base</a>
             </div>
 
                 
@@ -75,23 +82,22 @@ bg-light
         
         
         
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Insights from Building an Embeddings and Retrieval-Augmented Generation App</a></h1>
 
-    
-
-
-    
-<div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/2024/11/insights-from-embeddings-and-retrieval-augmented-generation/" class="u-url">Insights from Building an Embeddings and Retrieval-Augmented Generation App</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Amrit
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Amrit
             </span></p>
             <p class="dateline">
-            <a href="posts/2024/11/insights-from-embeddings-and-retrieval-augmented-generation/" rel="bookmark">
+            <a href="." rel="bookmark">
             <time class="published dt-published" datetime="2024-11-10T00:00:00+05:30" itemprop="datePublished" title="11-2024">11-2024</time></a>
             </p>
+            
+
         </div>
-    </header><div class="e-content entry-content">
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
     <p><em>In this post, I’ll share key insights and findings from building a practical text search application without using frameworks like LangChain or external APIs. I've also extended the app’s functionality to support Retrieval-Augmented Generation (RAG) capabilities using the Gemini Flash 1.5B model.</em></p>
 <hr>
 <h3>Understanding Text Retrieval 📚</h3>
@@ -102,13 +108,13 @@ bg-light
 <p>A vector is a mathematical representation, essentially a set of numbers, such as <code>[1, 2, 3]</code>. Assigning meaning to these numbers makes them useful. For example, in X, Y, Z dimensions, <code>[1, 2, 3]</code> might represent an object’s location in 3D space.</p>
 <p>In text retrieval and natural language processing (NLP), vectors represent data numerically, enabling computers to semantically compare sentence meanings. Machine learning models trained on large datasets can convert text into numerical vectors, known as <em>embeddings</em>.</p>
 <p>For instance, the sentence "<em>Hello, My Name is Amrit</em>" could be represented as an embedding vector like <code>[-0.23, 0.78, 1.22, -0.034 ...]</code>. Below, you’ll see an example of a text embedding vector of size 512:</p>
-<p><img alt="" src="images/insomnia_output.png"></p>
+<p><img alt="" src="../../../../images/insomnia_output.png"></p>
 <h3>What is Retrieval-Augmented Generation (RAG)? 🖨️</h3>
-<p><img alt="" src="images/rag_diagram.jpg"></p>
+<p><img alt="" src="../../../../images/rag_diagram.jpg"></p>
 <p>Retrieval-Augmented Generation (RAG) uses three key elements to generate relevant responses with Large Language Models (LLMs) -- <em>Information Retrieval</em>, <em>Knowledge-Augmentation</em> and <em>Text Generation</em>.</p>
 <p>Here’s a breakdown of each component:</p>
 <h5>Information Retrieval</h5>
-<p>As discussed in the <a href="posts/2024/11/insights-from-embeddings-and-retrieval-augmented-generation/#understanding-text-retrieval">text retrieval section</a>, this involves extracting relevant information from a corpus. Our application is designed to retrieve accurate, relevant data to prevent RAG from returning irrelevant results.</p>
+<p>As discussed in the <a href="#understanding-text-retrieval">text retrieval section</a>, this involves extracting relevant information from a corpus. Our application is designed to retrieve accurate, relevant data to prevent RAG from returning irrelevant results.</p>
 <p>The IR systems can use algorithms that depends on exact query matching in order to retrieve relevant text data. There are many ranking and relevance algorithms which performs to fetch relevant data from the information system. The query and ranking algorithms are then combined with similarity matching algorithms from the realm of Natural Language Processing (NLP) in order to furture tune the search results.</p>
 <h5>Knowledge Augmentation</h5>
 <p>Augmentation provides the model with context or additional information to improve responses. Known as "Knowledge Augmentation," this technique supplements LLMs with information they may lack. However, each LLM has a token limit, so our retrieval system must fetch concise, relevant information so that the text-generation process may provide user with accurate response.</p>
@@ -118,7 +124,7 @@ bg-light
 <h3>Building My Text Embedding and RAG Application 🚀</h3>
 <p>There's a common adage in engineering: <em>never reinvent the wheel</em>. I don’t fully subscribe to this. If we don’t understand how the wheel was originally invented, how can we hope to design something as complex as a car? Building from scratch is essential for understanding and innovation.</p>
 <p>For this project, several frameworks could have provided out-of-the-box utilities, such as LangChain, Cohere's semantic search library, or OpenAI’s text embedding model. However, using these would have only taught me to work with their APIs, not the underlying principles.</p>
-<p><img alt="" src="images/learnings_from_text_embeddings_RAG.jpg"></p>
+<p><img alt="" src="../../../../images/learnings_from_text_embeddings_RAG.jpg"></p>
 <p>I started by designing a vector database from scratch, using <strong>SQLite</strong> with the <code>sqlite-vec</code> extension to convert it into a vector database. I created wrappers around SQLite to abstract low-level operations, keeping the implementation clean and manageable.</p>
 <p>For text embeddings, I initially used <strong>TensorFlow’s Wiki-Words</strong> model but later switched to <strong>Google’s Universal Sentence Encoder</strong>, which generates embeddings of size <strong>512</strong>, offering improved accuracy.</p>
 <p>The LLM, <strong>Gemini Flash 1.5B</strong>, is my only external dependency for generating responses. I’m exploring on-device models as this is a field I’d like to delve deeper into.</p>
@@ -131,31 +137,31 @@ bg-light
 <li>The user’s query is converted into an embedding, and the system retrieves the nearest neighbors from the vector database.</li>
 <li>The results are displayed in ascending order of distance from the query embedding, showing the closest matches first.</li>
 </ol>
-<p><img alt="" src="images/search_results.png"></p>
+<p><img alt="" src="../../../../images/search_results.png"></p>
 <h5>RAG for Question-Answering</h5>
 <p>For question-answering:</p>
 <ol>
 <li>The user’s question is converted into an embedding, and the system retrieves relevant embeddings from the vector database.</li>
 <li>The LLM then generates a response based on this context.</li>
 </ol>
-<p><img alt="" src="images/ask_results.png"></p>
+<p><img alt="" src="../../../../images/ask_results.png"></p>
 <h5>Data Operations</h5>
 <p>The Data Operations page allows users to add new data to the database, expanding available data for search and responses. Users enter text data, which is converted into embeddings and stored in the vector database.</p>
-<p><img alt="" src="images/data_operations.png"></p>
+<p><img alt="" src="../../../../images/data_operations.png"></p>
 <h4>Key Technical Details 🤓</h4>
 <p>This section dives into some technical aspects of the app, presented in a Q&amp;A format for those interested in the finer points.</p>
 <h5>How Do Vector Databases Differ from Traditional Databases?</h5>
 <p>Traditional databases store structured data in various formats. Vector databases, by contrast, are specialized for storing multi-dimensional vectors. They don’t differentiate between data types like images, text, or audio, as all unstructured data is stored in vectors.</p>
 <p>Vector databases support operations like cosine similarity, distance, and dot product, unlike CRUD operations typical in traditional databases.</p>
 <p>The <code>text-embeddings</code> table below shows how the database stores text embeddings, each associated with a row ID for retrieval. The database also includes <code>chunks</code> and <code>rowId</code> tables for breaking down large texts, though chunking isn’t implemented in this app.</p>
-<p><img alt="" src="images/vector_database_structure.png"></p>
+<p><img alt="" src="../../../../images/vector_database_structure.png"></p>
 <h5>Can Embeddings Be Converted Back to Text?</h5>
 <p>Embeddings don’t store word-to-number mappings, making it impossible to retrieve exact text from them. Techniques like similarity search (used in this app) can retrieve text with similar meanings, but converting embeddings back to the original text is mathematically impossible and computationally challenging.</p>
 <h5>How Does Text Length Affect Embeddings?</h5>
 <p>Embedding length is designed to capture a text’s meaning. Shorter texts provide more focused embeddings, while longer texts can lose detail as the model compresses information.</p>
 <p>To address this, <em>chunking</em> breaks down longer texts into smaller, meaningful pieces, storing embeddings for each chunk. This improves search accuracy and can add metadata for better context.</p>
 <p>I learned about this technique but didn't implemented it yet, something to look for in the future😉.</p>
-<p><img alt="" src="images/chunking_diagram.jpg"></p>
+<p><img alt="" src="../../../../images/chunking_diagram.jpg"></p>
 <h5>How Does the Search Work?</h5>
 <p>The app uses a K-Nearest Neighbor (KNN) algorithm from <code>sqlite-vec</code> to find the closest matches for a query embedding. Here’s a simplified SQL example:</p>
 <div class="code"><pre class="code literal-block"><span class="k">SELECT</span>
@@ -174,7 +180,7 @@ bg-light
 </pre></div>
 
 <p>The KNN algorithm calculates the distance between vectors in a multi-dimensional space (512 in this case) to find the nearest matches. Other algorithms, like cosine similarity, are also common for comparing text similarity in information retrieval. Given below you can see the search performed on the existing corpora of text shown in ascending order of the distance from the query text.</p>
-<p><img alt="" src="images/insomnia_output_2.png"></p>
+<p><img alt="" src="../../../../images/insomnia_output_2.png"></p>
 <h5>How Does the Prompt Look?</h5>
 <p>The prompt used in the app to generate responses is available on <a href="https://aistudio.google.com/app/prompts">Google AI Studio</a>.</p>
 <h3>Source Code ⭐</h3>
@@ -186,18 +192,19 @@ bg-light
 </ul>
 <p>For instructions on setting up a vector database with SQLite, see the <a href="https://github.com/asg017/sqlite-vec">sqlite-vec extension</a>. The LLM model Gemini is available on <a href="https://aistudio.google.com/prompts/new_chat">Google AI Studio</a>.</p>
     </div>
-    </article>
-</div>
-
-        <ul class="pager postindexpager clearfix">
-<li class="next"><a href="index-11.html" rel="next">Older posts</a></li>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../categories/genai/" rel="tag">genai</a></li>
         </ul>
-<!--End of body content--><footer id="footer"></footer>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../bm25-algorithm-for-text-retrieval/" rel="prev" title="BM25 Algorithm for text retrieval">Previous post</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer"></footer>
 </div>
 </div>
 
 
-        <script src="assets/js/all-nocdn.js"></script><script>
+        <script src="../../../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});

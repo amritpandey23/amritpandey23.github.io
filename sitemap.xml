@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://amritpandey23.github.io/</loc>
-  <lastmod>2024-11-09T10:51:00Z</lastmod>
+  <lastmod>2024-11-10T05:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://amritpandey23.github.io/2019/</loc>
@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://amritpandey23.github.io/archive.html</loc>
-  <lastmod>2024-11-09T10:51:00Z</lastmod>
+  <lastmod>2024-11-10T05:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://amritpandey23.github.io/categories/</loc>
-  <lastmod>2024-11-09T11:35:00Z</lastmod>
+  <lastmod>2024-11-10T07:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://amritpandey23.github.io/categories/career/</loc>
@@ -48,6 +48,10 @@
  <url>
   <loc>https://amritpandey23.github.io/categories/cat_web-development/</loc>
   <lastmod>2024-11-05T13:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://amritpandey23.github.io/categories/genai/</loc>
+  <lastmod>2024-11-10T07:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://amritpandey23.github.io/categories/golang/</loc>
@@ -83,7 +87,11 @@
  </url>
  <url>
   <loc>https://amritpandey23.github.io/index-10.html</loc>
-  <lastmod>2024-11-09T10:51:00Z</lastmod>
+  <lastmod>2024-11-10T05:48:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://amritpandey23.github.io/index-11.html</loc>
+  <lastmod>2024-11-10T05:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://amritpandey23.github.io/index-2.html</loc>
@@ -156,6 +164,14 @@
  <url>
   <loc>https://amritpandey23.github.io/posts/2024/11/bm25-algorithm-for-text-retrieval/</loc>
   <lastmod>2024-11-09T10:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://amritpandey23.github.io/posts/2024/11/insights-from-embeddings-and-retrieval-augmented-generation/</loc>
+  <lastmod>2024-11-10T07:09:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://amritpandey23.github.io/posts/2024/11/learnings-from-embeddings-and-retrieval-augmentated-generation/</loc>
+  <lastmod>2024-11-10T05:45:00Z</lastmod>
  </url>
  <url>
   <loc>https://amritpandey23.github.io/posts/some-invaluable-tips-for-programmers/</loc>
